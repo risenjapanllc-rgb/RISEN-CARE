@@ -90,7 +90,27 @@ Structure Discoveryの結果である。
 
 ---
 
-## 5. Knowledge Modeling
+## 5. Respect the Discomfort
+
+違和感を大切にする。
+
+違和感は設計ミスではない。
+
+人間がRealityとKnowledgeのズレを感じたサインである。
+
+RISENでは、
+違和感を消すのではなく、
+その理由を観察し、
+対話し、
+構造を発見する。
+
+新しいKnowledgeは、
+多くの場合、
+違和感から生まれる。
+
+> 違和感は、構造を発見する入口である。
+
+## 6. Knowledge Modeling
 
 発見した構造を
 Knowledge Modelへ変換する。
@@ -112,7 +132,7 @@ Knowledgeはデータではなく、
 
 # Part 2. Development Method
 
-## 6. Database Design
+## 7. Database Design
 
 Databaseはゴールではない。
 
@@ -126,7 +146,7 @@ Database
 
 ---
 
-## 7. Data Integration
+## 8. Data Integration
 
 入力方法は問わない。
 
@@ -142,7 +162,7 @@ Database
 
 ---
 
-## 8. AI Collaboration
+## 9. AI Collaboration
 
 AIは設計者ではない。
 
@@ -160,7 +180,7 @@ AIは
 
 ---
 
-## 9. Dialogue First
+## 10. Dialogue First
 
 AI時代では、
 
@@ -188,7 +208,7 @@ Knowledge
 
 ---
 
-## 10. Continuous Learning
+## 11. Continuous Learning
 
 Knowledgeは完成しない。
 
