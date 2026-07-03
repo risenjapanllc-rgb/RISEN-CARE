@@ -1,30 +1,36 @@
 # CSV Analysis
 
-## Purpose
+Version: 0.2  
+Last Updated: 2026-07-03
+
+---
+
+# Purpose
 
 本書は、施設から提供されたCSVデータを分析し、
 RISEN Knowledge OSへ取り込むための基礎資料である。
 
 CSVをそのまま取り込むことを目的とせず、
-現場データの構造を理解し、
-Knowledge DBへ変換するための分析結果をまとめる。
+現場業務を理解し、
+データから構造を発見し、
+Knowledge Modelを設計するための分析結果をまとめる。
 
 ---
 
 # Data Source
 
-- Source：施設管理システム
-- Format：CSV
-- Origin：MySQL Export
+| Item | Value |
+|------|------|
+| Source | 施設管理システム |
+| Origin | MySQL Export |
+| Format | CSV |
 
 ---
 
 # CSV Structure
 
-主な項目
-
-| CSV項目 | 内容 |
-|---------|------|
+| CSV Column | Description |
+|------------|-------------|
 | ID | レコードID |
 | 日時 | イベント日時 |
 | 氏名 | 利用者 |
@@ -33,7 +39,8 @@ Knowledge DBへ変換するための分析結果をまとめる。
 | 種類 | イベント詳細 |
 | データ1〜8 | イベントごとの付加情報 |
 | 詳細 | 自由記述 |
-| 状態 | 在園状態 |
+| 在園状態 | 利用者状態 |
+| 状態 | システム状態 |
 | 気温 | 気象情報 |
 | 天気 | 気象情報 |
 
@@ -41,127 +48,206 @@ Knowledge DBへ変換するための分析結果をまとめる。
 
 # Data Characteristics
 
-## 1. 1イベント = 複数レコード
+## 1. One Event = Multiple Records
 
 施設システムでは、
-1回の支援を複数行に分割して保存している。
+1回の支援を複数レコードへ分割して保存している。
 
 例
 
+```
 トイレ確認
 
-↓
-
-・トイレ確認
-・尿（普通量）
-・清拭
-・ウォシュレット
+├─ トイレ確認
+├─ 尿（普通量）
+├─ 清拭
+└─ ウォシュレット
+```
 
 RISENでは、
-これらを1つのEventとして統合する。
+これらを1つのEventとして統合して管理する。
 
 ---
 
-## 2. イベント中心構造
+## 2. Event-Oriented Data
 
 CSVは
 
-日時
-利用者
-記入者
+- 日時
+- 利用者
+- 記入者
 
-を中心として、
+を中心に、
 
-種類
+- 種類
+- データ1〜8
+- 詳細
 
-データ1〜8
-
-詳細
-
-が付加される構造になっている。
+が付加されるイベント中心の構造になっている。
 
 ---
 
-## 3. データ1〜8
+## 3. Variable Attributes
 
 データ1〜8は固定項目ではない。
 
-イベントによって意味が変化する。
+イベントごとに意味が変化する。
 
 例
 
+```
 尿
-↓
-
-データ1 = 普通量
+└── データ1 = 普通量
 
 睡眠
-↓
+└── データ1 = 熟睡
+```
 
-データ1 = 熟睡
-
-RISENでは固定カラムを持たず、
-event_itemsで管理する。
+RISENでは固定カラムではなく、
+Event Itemとして管理する。
 
 ---
 
-## 4. 自由記述
+## 4. Free Text
 
 詳細には重要なKnowledgeが含まれる。
 
-AIによる
+今後、
 
-- 要約
+- AI要約
 - キーワード抽出
 - Knowledge生成
 
-対象となる。
+の対象となる。
 
 ---
 
-# RISEN Mapping Policy
+# Event Grouping Rule
 
-CSVは直接Knowledgeにならない。
+次の項目が一致する場合、
+同一Eventとして扱う。
 
-CSV
+- 日時
+- 利用者
+- 記入者
+- 処遇内容（行動）
 
-↓
+その配下に
 
-Mapping
+- 種類
+- データ1〜8
+- 詳細
 
-↓
-
-events
-
-↓
-
-event_values
-
-↓
-
-Knowledge
-
-という変換を行う。
+を保持する。
 
 ---
 
-# Current Findings
+# Confirmed Categories
 
-確認できたイベント
+現在確認できたカテゴリ
 
 - 睡眠
+- 排泄
+- 行動
+- 移動
+
+今後CSV全体を分析して追加する。
+
+---
+
+# Confirmed Event Types
+
+現在確認できたイベント
+
+- 睡眠状況
 - トイレ確認
 - 行動記録
 - 付添移動
 
-今後CSV全体を分析し、
-Category・Type・Itemを整理する。
+今後CSV全体から抽出する。
+
+---
+
+# Confirmed Event Items
+
+現在確認できた項目
+
+- 熟睡
+- 尿
+- 普通量
+- 清拭
+- ウォシュレット
+- 居室
+- トイレ
+- 尿便なし
+
+今後CSV全体から抽出する。
+
+---
+
+# Structure Discovery
+
+今回のCSV分析で判明したこと
+
+- 現場はEvent単位で業務を行っている。
+- CSVは1つのEventを複数レコードへ分割して保存している。
+- データ1〜8は固定項目ではなく、イベントごとに意味が変化する。
+- RISENではEventをKnowledgeの最小単位として管理する。
+
+---
+
+# RISEN Transformation Model
+
+RISENではCSVを直接Knowledgeへ変換しない。
+
+```
+Reality
+    ↓
+Observation
+    ↓
+Event
+    ↓
+Event Values
+    ↓
+Knowledge
+```
+
+CSVはRealityを記録した媒体であり、
+RISENはその背後にある出来事（Event）を理解し、
+Knowledgeへ構造化する。
+
+---
+
+# Findings
+
+今回の分析により、
+
+施設システムは
+
+**「1イベント＝複数レコード」**
+
+という保存構造を持つことが確認できた。
+
+RISENでは、
+複数レコードを1つのEventとして統合し、
+Knowledgeとして管理する。
+
+この分析結果は、
+
+- Master Design
+- Database Design
+- MySQL Mapping
+- AI Event Extraction
+
+の設計根拠となる。
 
 ---
 
 # Next Step
 
-- MySQL Mapping作成
-- 初期マスタ設計
-- Database Design更新
-- Supabase反映
+- MySQL Mapping
+- Event Category Design
+- Event Type Design
+- Event Item Design
+- Database Design
+- Supabase Implementation
