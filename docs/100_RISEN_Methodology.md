@@ -181,3 +181,189 @@ Structureを発見し、
 Knowledgeへ構造化し、
 
 Valueを創造するKnowledge OSである。
+
+# AI Collaboration
+
+## AIとの共創
+
+AI時代の価値は、
+AIが答えを出すことではない。
+
+人とAIが対話を重ねることで、
+新しい理解や構造を発見することにある。
+
+---
+
+# 従来のAI利用
+
+```
+Question
+    ↓
+Answer
+    ↓
+End
+```
+
+AIを「回答装置」として利用する。
+
+---
+
+# 共創型AI
+
+```
+Observation
+    ↓
+Dialogue
+    ↓
+Hypothesis
+    ↓
+Verification
+    ↓
+Structure Discovery
+    ↓
+Knowledge
+```
+
+AIとの対話を通じて、
+構造を発見し、
+Knowledgeを育てていく。
+
+---
+
+# AIの役割
+
+AIは答えを決める存在ではない。
+
+AIは
+
+・整理する
+
+・言語化する
+
+・比較する
+
+・抽象化する
+
+・構造を発見する
+
+ことを支援する。
+
+最終的な判断は人が行う。
+
+---
+
+# Human × AI
+
+人は、
+
+・現場を知っている
+
+・経験を持っている
+
+・違和感を感じる
+
+AIは、
+
+・大量の情報を整理する
+
+・パターンを見つける
+
+・概念を言語化する
+
+両者が対話することで、
+
+一人では見つけられなかった構造が発見される。
+
+---
+
+# Dialogue Driven Discovery
+
+今回のRISEN開発では、
+
+CSV分析から
+
+「1イベント＝複数レコード」
+
+という現場の特徴を理解した。
+
+その後の対話を通じて、
+
+Event中心設計
+
+Knowledge Model
+
+Structure Discovery
+
+Reality Driven Design
+
+という概念が生まれた。
+
+これらは、
+
+最初から用意されていた答えではなく、
+
+対話によって創発した知識である。
+
+---
+
+# Dialogue First
+
+AI時代では、
+
+設計を始める前に、
+
+対話を始める。
+
+対話を重ねることで、
+
+理解が深まり、
+
+構造が発見され、
+
+Knowledgeが育っていく。
+
+---
+
+# Methodology
+
+Observation
+
+↓
+
+Dialogue
+
+↓
+
+Structure Discovery
+
+↓
+
+Knowledge Modeling
+
+↓
+
+Database Design
+
+↓
+
+Implementation
+
+↓
+
+Knowledge Evolution
+
+---
+
+# Core Message
+
+AIは答えを出すために存在するのではない。
+
+AIは、
+
+人との対話を通じて、
+
+理解を深め、
+
+構造を発見し、
+
+Knowledgeを育てるためのパートナーである。
