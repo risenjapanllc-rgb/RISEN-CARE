@@ -506,3 +506,35 @@ RISENでは、
 その結果として、
 
 設計は自然に見えてくる。
+
+## Principle : Follow Understanding
+
+RISENでは、
+
+理解が設計を導く。
+
+設計がDatabaseを導く。
+
+Databaseが実装を導く。
+
+実装がKnowledgeを育てる。
+
+順番を間違えない。
+
+Reality
+    ↓
+Observation
+    ↓
+Dialogue
+    ↓
+Understanding
+    ↓
+Structure Discovery
+    ↓
+Knowledge Model
+    ↓
+Database Design
+    ↓
+Implementation
+    ↓
+Knowledge Evolution
