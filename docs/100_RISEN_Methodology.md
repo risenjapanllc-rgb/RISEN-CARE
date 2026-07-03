@@ -560,3 +560,12 @@ IoTでも、
 重要なのは入力方法ではなく、
 
 Realityをどのように観察したかである。
+
+# Knowledge Ownership Principle
+
+施設が蓄積するObservationとKnowledgeは、
+施設自身の重要な資産である。
+
+RISENは特定の業務システムに依存せず、
+施設が自らKnowledgeを蓄積し、
+様々なシステムや機器と連携できる基盤を提供する。
