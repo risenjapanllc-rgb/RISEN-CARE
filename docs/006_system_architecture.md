@@ -1,35 +1,41 @@
 # RISEN System Architecture
 
-                Human
-                   │
-              Sensor
-                   │
-              IoT Device
-                   │
-             Medical Device
-                   │
-            Facility System
-                   │
-             Voice Input
-                   │
-            Mobile Input
-                   │
-                   ▼
-          Observation Layer
-                   │
-                   ▼
-        Knowledge Dictionary
-                   │
-                   ▼
-          Knowledge Model
-                   │
-                   ▼
-            Knowledge Database
-                   │
-                   ▼
-          Knowledge Engine
-                   │
-      ┌────────────┼────────────┐
-      ▼            ▼            ▼
-   AI Engine   Document      Analytics
-                 Engine
+Reality
+   │
+   ▼
+Observation Sources
+──────────────────────
+Human
+Facility System
+CSV
+MySQL
+Voice
+Mobile
+Sensor
+IoT
+Medical Device
+Google Drive
+Google Sheets
+──────────────────────
+          │
+          ▼
+ Observation Layer
+          │
+          ▼
+ Knowledge Dictionary
+          │
+          ▼
+ Knowledge Model
+          │
+          ▼
+ Knowledge Database
+          │
+          ▼
+ Knowledge Engine
+          │
+ ┌────────┼───────────┐
+ ▼        ▼           ▼
+AI   Document   Analytics
+                 │
+                 ▼
+Billing / Audit / BI
