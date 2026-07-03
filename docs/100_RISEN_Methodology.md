@@ -400,3 +400,10 @@ Result
 
 RISENはEventを保存するだけでなく、
 この思考プロセスを支援するKnowledge OSを目指す。
+
+# Principle：Observation First
+
+KnowledgeはObservation（観察）を基礎とする。
+Interpretation（解釈）はObservationと区別して管理する。
+Hypothesis（仮説）はObservationやInterpretationとは別のレイヤーとして扱う。
+AIはObservationを改変せず、InterpretationやHypothesisを支援する。
