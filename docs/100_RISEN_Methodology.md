@@ -367,3 +367,36 @@ AIは、
 構造を発見し、
 
 Knowledgeを育てるためのパートナーである。
+
+# Human Cognition Model
+
+人はEventだけで判断しているのではない。
+
+Observation
+（観察）
+
+↓
+
+Interpretation
+（意味づけ）
+
+↓
+
+Hypothesis
+（仮説）
+
+↓
+
+Action
+（行動）
+
+↓
+
+Result
+（結果）
+
+この思考の連鎖によって、
+現場の判断が行われる。
+
+RISENはEventを保存するだけでなく、
+この思考プロセスを支援するKnowledge OSを目指す。
