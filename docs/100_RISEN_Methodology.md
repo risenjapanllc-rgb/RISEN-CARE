@@ -538,3 +538,25 @@ Database Design
 Implementation
     ↓
 Knowledge Evolution
+
+# Observation Source Agnostic（観測源非依存）
+
+RISENは入力元に依存しない。
+
+Observationは、
+
+人による記録でも、
+
+センサーでも、
+
+IoTでも、
+
+医療機器でも、
+
+音声でも、
+
+同じObservationとして扱う。
+
+重要なのは入力方法ではなく、
+
+Realityをどのように観察したかである。
