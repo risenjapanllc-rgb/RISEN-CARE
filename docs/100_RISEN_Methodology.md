@@ -1,312 +1,166 @@
 # 100 RISEN Methodology
 
-## Introduction
+Version: 0.2  
+Last Updated: 2026-07-03
+
+---
+
+# Introduction
 
 RISENは単なるソフトウェアではない。
 
 現場を理解し、
-知識を構造化し、
-価値へ変換するための方法論である。
+人間の理解を構造化し、
+Knowledgeへ変換し、
+価値を創造するための方法論である。
+
+ソフトウェアはその実装であり、
+MethodologyこそがRISENの中核である。
 
 ---
 
-# 1. Mission Driven
+# Part 1. Foundation
 
-なぜ作るのか。
-
-Mission
-
-理解から、価値をつくる。
+## 1. Mission Driven
 
 すべての設計はMissionから始まる。
 
+> 理解から、価値をつくる。
+
+Missionはシステムを作るためではなく、
+現場を理解するために存在する。
+
 ---
 
-# 2. Reality Driven
+## 2. Reality Driven
 
-システムではなく、
+RISENはシステムから考えない。
+
 現場を見る。
 
-現場で起きるRealityを理解する。
+Realityを理解する。
+
+```
+Reality
+    ↓
+Understanding
+```
 
 ---
 
-# 3. Observation
+## 3. Observation First
 
-データを見る。
+設計の前に観察する。
 
-CSV
+観察対象は
 
-MySQL
+- CSV
+- MySQL
+- 現場
+- インタビュー
+- 業務フロー
 
-インタビュー
+である。
 
-現場観察
-
-まず観察する。
+Observationがなければ、
+理解も設計も存在しない。
 
 ---
 
-# 4. Structure Discovery
+## 4. Structure Discovery
 
-構造を設計しない。
+RISENは構造を最初に設計しない。
 
 構造を発見する。
 
+```
 Reality
-
-↓
-
+    ↓
+Observation
+    ↓
 Pattern
-
-↓
-
-Structure
-
-↓
-
+    ↓
+Structure Discovery
+    ↓
 Knowledge Model
+```
+
+Database Designは
+Structure Discoveryの結果である。
 
 ---
 
-# 5. Knowledge Modeling
+## 5. Knowledge Modeling
 
-構造をKnowledgeへ変換する。
+発見した構造を
+Knowledge Modelへ変換する。
 
+```
+Reality
+    ↓
 Event
-
-↓
-
-Event Values
-
-↓
-
+    ↓
+Knowledge Model
+    ↓
 Knowledge
+```
+
+Knowledgeはデータではなく、
+意味を持った構造である。
 
 ---
 
-# 6. Database Design
+# Part 2. Development Method
 
-Knowledge ModelをDBへ落とす。
+## 6. Database Design
 
-DBはゴールではない。
+Databaseはゴールではない。
 
 Knowledge Modelの実装である。
 
+```
+Knowledge Model
+        ↓
+Database
+```
+
 ---
 
-# 7. Data Integration
+## 7. Data Integration
 
 入力方法は問わない。
 
-MySQL
+- MySQL API
+- CSV
+- Google Drive
+- Google Sheets
+- Web Input
+- Mobile Input
+- Voice Input
 
-CSV
-
-Google Drive
-
-Web
-
-Voice
-
-すべてKnowledgeへ変換する。
+すべて同じKnowledge Modelへ変換する。
 
 ---
 
-# 8. AI Collaboration
+## 8. AI Collaboration
 
 AIは設計者ではない。
 
 AIは
 
-- 構造発見
-- 要約
-- 分析
-- 推論
-
-を支援する。
-
----
-
-# 9. Continuous Learning
-
-Knowledgeは完成しない。
-
-育ち続ける。
-
-Knowledge
-
-↓
-
-Feedback
-
-↓
-
-Improve
-
-↓
-
-Knowledge
-
----
-
-# Core Principles
-
-Mission First
-
-Reality First
-
-Understand First
-
-Structure Discovery
-
-Knowledge First
-
-Human Centered
-
-AI Assisted
-
-Continuous Learning
-
----
-
-# RISEN Definition
-
-RISENは
-
-Realityを理解し、
-
-Structureを発見し、
-
-Knowledgeへ構造化し、
-
-Valueを創造するKnowledge OSである。
-
-# AI Collaboration
-
-## AIとの共創
-
-AI時代の価値は、
-AIが答えを出すことではない。
-
-人とAIが対話を重ねることで、
-新しい理解や構造を発見することにある。
-
----
-
-# 従来のAI利用
-
-```
-Question
-    ↓
-Answer
-    ↓
-End
-```
-
-AIを「回答装置」として利用する。
-
----
-
-# 共創型AI
-
-```
-Observation
-    ↓
-Dialogue
-    ↓
-Hypothesis
-    ↓
-Verification
-    ↓
-Structure Discovery
-    ↓
-Knowledge
-```
-
-AIとの対話を通じて、
-構造を発見し、
-Knowledgeを育てていく。
-
----
-
-# AIの役割
-
-AIは答えを決める存在ではない。
-
-AIは
-
-・整理する
-
-・言語化する
-
-・比較する
-
-・抽象化する
-
-・構造を発見する
+- 観察を整理する
+- 言語化する
+- 比較する
+- 抽象化する
+- 構造を発見する
 
 ことを支援する。
 
-最終的な判断は人が行う。
+最終判断は人が行う。
 
 ---
 
-# Human × AI
-
-人は、
-
-・現場を知っている
-
-・経験を持っている
-
-・違和感を感じる
-
-AIは、
-
-・大量の情報を整理する
-
-・パターンを見つける
-
-・概念を言語化する
-
-両者が対話することで、
-
-一人では見つけられなかった構造が発見される。
-
----
-
-# Dialogue Driven Discovery
-
-今回のRISEN開発では、
-
-CSV分析から
-
-「1イベント＝複数レコード」
-
-という現場の特徴を理解した。
-
-その後の対話を通じて、
-
-Event中心設計
-
-Knowledge Model
-
-Structure Discovery
-
-Reality Driven Design
-
-という概念が生まれた。
-
-これらは、
-
-最初から用意されていた答えではなく、
-
-対話によって創発した知識である。
-
----
-
-# Dialogue First
+## 9. Dialogue First
 
 AI時代では、
 
@@ -314,96 +168,227 @@ AI時代では、
 
 対話を始める。
 
-対話を重ねることで、
+```
+Observation
+      ↓
+Dialogue
+      ↓
+Hypothesis
+      ↓
+Verification
+      ↓
+Structure Discovery
+      ↓
+Knowledge
+```
 
+対話によって、
 理解が深まり、
-
-構造が発見され、
-
-Knowledgeが育っていく。
+構造が発見される。
 
 ---
 
-# Methodology
+## 10. Continuous Learning
+
+Knowledgeは完成しない。
+
+```
+Knowledge
+      ↓
+Feedback
+      ↓
+Improve
+      ↓
+Knowledge
+```
+
+Knowledgeは育ち続ける。
+
+---
+
+# Part 3. Human Cognition
+
+## Human Cognition Model
+
+人はEventだけで判断しているのではない。
+
+```
+Reality
+      ↓
+Observation
+      ↓
+Interpretation
+      ↓
+Hypothesis
+      ↓
+Decision
+      ↓
+Action
+      ↓
+Result
+      ↓
+Knowledge
+```
+
+現場の判断は、
+この認知プロセスによって行われる。
+
+RISENは、
+この思考プロセスを支援するKnowledge OSを目指す。
+
+---
+
+## Observation First Principle
+
+KnowledgeはObservationを基礎とする。
+
+Observation（観察）
+
+Interpretation（解釈）
+
+Hypothesis（仮説）
+
+は必ず区別して扱う。
+
+ObservationをAIが改変することはない。
+
+AIは
+
+Interpretation
+
+Hypothesis
+
+Decision
+
+を支援する。
+
+---
+
+## Implicit Classification
+
+人は無意識に情報を分類している。
+
+例えば
+
+```
+普通量
+```
+
+だけ見ても、
+
+```
+尿の普通量
+```
+
+と理解する。
+
+さらに
+
+```
+トイレが長い
+```
+
+というObservationから、
+
+```
+排便中かもしれない
+```
+
+というInterpretationを行い、
+
+```
+何かあったのではないか
+```
+
+というHypothesisを立てる。
+
+つまり人間は
 
 Observation
 
 ↓
 
-Dialogue
+Interpretation
 
 ↓
 
-Structure Discovery
+Hypothesis
 
-↓
+という暗黙の分類体系を持っている。
 
-Knowledge Modeling
+RISENはこの暗黙知を
+構造化されたKnowledgeへ変換する。
 
-↓
+---
 
-Database Design
+## Knowledge Engineering
 
-↓
+RISENはKnowledgeを保存するシステムではない。
 
-Implementation
+```
+Human Knowledge
+        ↓
+Knowledge Engineering
+        ↓
+Knowledge Model
+        ↓
+Knowledge DB
+```
 
-↓
+人間の頭の中にある知識を、
 
-Knowledge Evolution
+AIと共に構造化し、
+
+Knowledgeとして蓄積する。
+
+---
+
+# Core Principles
+
+- Mission First
+- Reality First
+- Observation First
+- Dialogue First
+- Structure Discovery
+- Knowledge First
+- Human Centered
+- AI Assisted
+- Continuous Learning
+
+---
+
+# RISEN Definition
+
+RISENは、
+
+現場のRealityを観察し、
+
+人間の理解を構造化し、
+
+Knowledgeへ変換し、
+
+価値を創造するKnowledge Engineering Platformである。
 
 ---
 
 # Core Message
 
-AIは答えを出すために存在するのではない。
+RISENは、
 
-AIは、
+データを管理するシステムではない。
 
-人との対話を通じて、
+人間の理解を構造化するシステムである。
+
+Database Designはゴールではない。
+
+Structure Discoveryの結果である。
+
+AIは答えを出すためではなく、
+
+人と対話し、
 
 理解を深め、
 
 構造を発見し、
 
 Knowledgeを育てるためのパートナーである。
-
-# Human Cognition Model
-
-人はEventだけで判断しているのではない。
-
-Observation
-（観察）
-
-↓
-
-Interpretation
-（意味づけ）
-
-↓
-
-Hypothesis
-（仮説）
-
-↓
-
-Action
-（行動）
-
-↓
-
-Result
-（結果）
-
-この思考の連鎖によって、
-現場の判断が行われる。
-
-RISENはEventを保存するだけでなく、
-この思考プロセスを支援するKnowledge OSを目指す。
-
-# Principle：Observation First
-
-KnowledgeはObservation（観察）を基礎とする。
-Interpretation（解釈）はObservationと区別して管理する。
-Hypothesis（仮説）はObservationやInterpretationとは別のレイヤーとして扱う。
-AIはObservationを改変せず、InterpretationやHypothesisを支援する。
