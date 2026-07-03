@@ -444,3 +444,25 @@ Patternは
 RISENはObservationを蓄積するだけではなく、
 
 Pattern Discoveryを支援するKnowledge Engineを目指す。
+
+Eventは独立して存在しない。
+
+一つのObservationは、
+
+他のObservation、
+
+Action、
+
+Decision、
+
+Document、
+
+Billing、
+
+Audit
+
+と相互に関係している。
+
+RISENは単一Eventを管理するのではなく、
+
+Event同士の関係性をKnowledgeとして構造化する。
