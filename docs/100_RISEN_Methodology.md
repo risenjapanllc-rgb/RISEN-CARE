@@ -392,3 +392,31 @@ AIは答えを出すためではなく、
 構造を発見し、
 
 Knowledgeを育てるためのパートナーである。
+
+# Core Definition
+
+RISENは、
+
+現場のRealityを観察し、
+
+人間の理解を構造化し、
+
+暗黙知を組織の共有Knowledgeへ変換する
+
+Knowledge Engineering Platformである。
+
+---
+
+# Mission Statement
+
+RISENは、
+
+現場の暗黙知を構造化し、
+
+組織の共有資産へ変換する。
+
+それによって、
+
+経験はKnowledgeとなり、
+
+Knowledgeは価値となる。
