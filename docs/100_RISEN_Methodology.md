@@ -445,6 +445,8 @@ RISENはObservationを蓄積するだけではなく、
 
 Pattern Discoveryを支援するKnowledge Engineを目指す。
 
+# Event Network Principle
+
 Eventは独立して存在しない。
 
 一つのObservationは、
