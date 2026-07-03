@@ -420,3 +420,27 @@ RISENは、
 経験はKnowledgeとなり、
 
 Knowledgeは価値となる。
+
+人は単一のObservationだけでは判断しない。
+
+Observation同士の関係性を認識し、
+
+Patternを発見する。
+
+Patternは
+
+・時間
+
+・人物
+
+・場所
+
+・頻度
+
+・変化
+
+などの関係から形成される。
+
+RISENはObservationを蓄積するだけではなく、
+
+Pattern Discoveryを支援するKnowledge Engineを目指す。
