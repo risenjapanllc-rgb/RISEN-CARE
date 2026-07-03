@@ -447,6 +447,8 @@ Pattern Discoveryを支援するKnowledge Engineを目指す。
 
 # Event Network Principle
 
+Everything is Connected（すべての出来事はつながっている）
+
 Eventは独立して存在しない。
 
 一つのObservationは、
