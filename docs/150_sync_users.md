@@ -36,4 +36,7 @@ users
 
 Googleは入力元であり、Knowledgeの保存先ではない。
 
+CSV項目は施設ごとに異なる。
+RISENはCSV形式に直接依存せず、施設別Mapperによって共通Observationへ変換する。
+
 RISEN Databaseが利用者情報の基盤となる。
