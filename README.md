@@ -16,6 +16,18 @@ RISENは、現場を理解し、知識を育てるKnowledge OSです。
 
 ---
 
+## Vision
+
+RISENは、施設が自らのKnowledgeを主体的に管理し、
+未来へ継承できるKnowledge Engineering Platformを目指す。
+
+データは保存するものではない。
+
+ObservationをKnowledgeへ構造化し、
+組織の共有資産として育てることがRISENの使命である。
+
+---
+
 ## Philosophy
 
 **「記録を残す」のではなく、「知識を育てる。」**
