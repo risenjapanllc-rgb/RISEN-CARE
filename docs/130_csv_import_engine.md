@@ -126,3 +126,8 @@ RISENはCSVを保存するのではなく、
 3. GASからCSVを読み取る
 4. SupabaseへINSERT
 5. AIチャットで確認
+
+   
+
+CSV項目は施設ごとに異なる。
+RISENはCSV形式に直接依存せず、施設別Mapperによって共通Observationへ変換する。
