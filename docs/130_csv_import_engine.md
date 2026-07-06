@@ -1,55 +1,57 @@
-# 130 CSV Import Engine
-
-Version: 0.1
-
----
-
-# Purpose
-
-CSV Import Engineは、施設システムから出力されたCSVを
-RISEN Knowledge Databaseへ取り込むための仕組みである。
-
-CSVをそのまま保存するのではなく、
-Observationとして理解し、
-events / event_values へ変換する。
-
----
-
-# Import Flow
-
-CSV
-
-↓
-
-Parser
-
-↓
-
-Observation Mapping
-
-↓
-
-Event Grouping
-
-↓
-
-events
-
-↓
-
-event_values
-
-↓
-
-Knowledge
-
----
-
 # Target CSV
 
-対象CSVは、施設システムから出力された日常記録データである。
+## Purpose
 
-主な項目：
+対象CSVは、各福祉施設の業務システムから出力される日常記録データである。
+
+RISENは特定の施設システムに依存しない。
+
+CSVの列名・項目・データ構造は施設ごとに異なることを前提とする。
+
+そのため、RISENではCSVを直接データベースへ登録せず、施設別Mapperを介して共通データモデルへ変換する。
+
+---
+
+# RISEN Data Flow
+
+```
+Facility System
+        │
+        ▼
+   Daily Record CSV
+        │
+        ▼
+ Facility Mapper
+        │
+        ▼
+ Common Observation
+        │
+        ├── events
+        ├── event_values
+        ├── attachments
+        └── Knowledge
+```
+
+---
+
+# Facility Mapper
+
+施設ごとにMapperを用意する。
+
+例
+
+- IchigoMapper
+- TanpopoMapper
+- SakuraMapper
+- DefaultMapper
+
+MapperはCSV項目を解析し、RISEN共通Observationへ変換する責任を持つ。
+
+---
+
+# Example : いちごの里CSV
+
+確認済み項目
 
 - ID
 - 日時
@@ -57,77 +59,103 @@ Knowledge
 - 処遇内容
 - 記入者
 - 種類
-- データ1〜8
-- 詳細
+- 保護
+- データ1
+- データ2
+- データ3
+- データ4
+- データ5
+- データ6
+- データ7
+- データ8
 - 気温
 - 天気
+- その他1
+- 詳細
+- 詳細2
+- その他2
+- その他3
 - 在園状態
+- 修正
 - 状態
 - 作成日時
 - 行動
+- 詳細KEY
+
+※この項目構成はいちごの里専用であり、他施設では異なる可能性がある。
 
 ---
 
-# Event Grouping Rule
+# Common Observation
 
-次の項目が一致するレコードは、
-同一Eventとして扱う。
+Mapperは施設CSVを次の共通モデルへ変換する。
 
-- 日時
-- 氏名
-- 記入者
-- 処遇内容
-- 行動
+## 基本情報
+
+- source_system
+- source_record_id
+- facility
+- user
+- staff
+- event_datetime
+
+## イベント情報
+
+- event_type
+- category
+- summary
+- memo
+
+## 属性情報
+
+- values
+- context
+- status
 
 ---
 
 # Mapping Policy
 
-## events
+Mapperは次の役割を担う。
 
-| CSV | events |
-|---|---|
-| 日時 | event_datetime |
-| 氏名 | case_record_id |
-| 記入者 | staff_id |
-| 処遇内容 | event_type |
-| 行動 | action |
-| 詳細 | memo |
-| 気温 | temperature |
-| 天気 | weather |
-| ID | source_record_id |
+- CSV列名の吸収
+- 日付形式の統一
+- 利用者の照合
+- 職員の照合
+- イベント種別の判定
+- データ項目の正規化
+- 共通Observationへの変換
 
 ---
 
-## event_values
+# Design Principles
 
-| CSV | event_values |
-|---|---|
-| 種類 | item |
-| データ1 | value_text |
-| データ2 | context_location |
-| データ3〜8 | additional_values |
+RISEN DatabaseはCSV構造に依存しない。
 
----
+CSVは入力形式の一つであり、内部ではすべて共通Observationとして扱う。
 
-# Design Principle
+これにより、
 
-CSVはRealityを記録した媒体である。
+- 新しい施設の追加
+- システム変更
+- CSV仕様変更
 
-RISENはCSVを保存するのではなく、
-その背後にあるObservationを構造化する。
+が発生しても、Mapperのみを変更すればRISEN本体は変更せずに対応できる。
 
 ---
 
-# Next Step
+# Future Expansion
 
-1. Supabase側のevents構造確認
-2. event_values構造確認
-3. GASからCSVを読み取る
-4. SupabaseへINSERT
-5. AIチャットで確認
+将来的にはCSVだけでなく、
 
-   
+- Google Spreadsheet
+- REST API
+- HL7 FHIR
+- 音声入力
+- モバイルアプリ
+- IoTセンサー
 
-CSV項目は施設ごとに異なる。
-RISENはCSV形式に直接依存せず、施設別Mapperによって共通Observationへ変換する。
+なども同じObservationへ変換し、統一的に管理する。
+
+CSVはRISENへの入力チャネルの一つとして位置付ける。
+
