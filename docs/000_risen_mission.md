@@ -1,5 +1,3 @@
-# 000 RISEN Mission
-
 ## Vision
 
 現場の知識が、未来の支援を育てる社会をつくる。
@@ -9,6 +7,10 @@
 # RISEN Mission
 
 > **RISEN is an Observation Intelligence Platform.**
+
+From Observation to Understanding.
+
+Understanding enables Better Care.
 
 RISEN is an Observation Intelligence Platform that transforms observations into understanding.
 
