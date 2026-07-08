@@ -6,6 +6,10 @@
 
 *Understanding enables Better Care.*
 
+RISEN transforms observations into knowledge, knowledge into understanding, and understanding into better care.
+
+It is designed to help care professionals discover meaningful patterns, understand changes over time, and support people through explainable AI.
+
 > **From Observation to Knowledge**
 
 RISENは、介護・福祉現場で発生するObservation（観察・記録）をKnowledge（知識）へ変換し、AIによる推論・可視化・意思決定支援へつなげるKnowledge Platformです。
