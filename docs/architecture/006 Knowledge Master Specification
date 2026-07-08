@@ -1,109 +1,397 @@
 # 006 RISEN Knowledge Master Specification v1
 
-## 1. Purpose
+**Version:** 1.0
+**Status:** Draft
+**Last Updated:** 2026-07-08
 
-This document defines the master data specification for the RISEN Knowledge Platform.
+---
 
-Knowledge Master defines how Observations are transformed into reusable semantic knowledge.
+# 1. Purpose
 
-Knowledge is not implemented by adding application logic.
+This document defines the Knowledge Master specification for the RISEN platform.
 
-Knowledge evolves through master data.
+Knowledge Master transforms structured Observations into reusable semantic knowledge.
 
-## 2. Core Principle
+Unlike application logic, Knowledge is managed through master data and continuously evolves as new observations are collected.
 
-Knowledge evolves through master data, not application code.
+The objective is to create a reusable knowledge base that supports AI reasoning, organizational learning, and continuous improvement across welfare and care services.
 
-## 3. Target Tables
+---
 
-The initial Knowledge Master consists of four tables:
+# 2. Position in the Architecture
 
-- knowledge_categories
-- knowledge_nodes
-- knowledge_relations
-- event_type_knowledge
+Knowledge Master is positioned between Observation and the Knowledge Graph.
 
-## 4. knowledge_categories
+```text
+Google Spreadsheet
+        ↓
+Observation
+        ↓
+Event Type
+        ↓
+Knowledge Master
+        ↓
+Knowledge Graph
+        ↓
+AI Reasoning
+        ↓
+Recommendation
+        ↓
+Dashboard
+```
 
-Defines broad domains of knowledge.
+Knowledge Master is responsible for assigning semantic meaning to standardized observations.
+
+---
+
+# 3. Core Principle
+
+RISEN follows two fundamental principles.
+
+**Observation is the Source of Truth.**
+
+Facts are always recorded as Observations.
+
+**Knowledge evolves through Master Data, not Application Code.**
+
+New meanings are added by expanding master definitions rather than modifying application logic.
+
+This enables long-term scalability and maintainability.
+
+---
+
+# 4. Responsibilities
+
+Knowledge Master is responsible for:
+
+* defining knowledge categories
+* defining reusable knowledge concepts
+* defining relationships between concepts
+* mapping Event Types to Knowledge
+* supporting AI reasoning
+* supporting future Knowledge Graph expansion
+
+Knowledge Master does not:
+
+* store observations
+* perform administrative reviews
+* execute AI reasoning
+* generate recommendations
+
+Those responsibilities belong to other architectural layers.
+
+---
+
+# 5. Knowledge Master Components
+
+The initial Knowledge Master consists of four master tables.
+
+| Master               | Purpose                             |
+| -------------------- | ----------------------------------- |
+| knowledge_categories | Organizes knowledge domains         |
+| knowledge_nodes      | Defines reusable knowledge concepts |
+| knowledge_relations  | Connects knowledge concepts         |
+| event_type_knowledge | Maps Observation types to Knowledge |
+
+---
+
+# 6. knowledge_categories
+
+Knowledge Categories organize concepts into reusable domains.
+
+Typical categories include:
+
+* Safety
+* Incident
+* Medical
+* Rights Protection
+* Behavior Support
+* Mobility
+* Hygiene
+* Nutrition
+* Sleep
+* Communication
+* ADL
+* IADL
+* Environment
+* Mental Health
+
+Categories improve organization and reporting but do not restrict relationships.
+
+---
+
+# 7. knowledge_nodes
+
+Knowledge Nodes represent individual semantic concepts.
+
+Examples include:
+
+Safety
+
+* Fall Risk
+* Injury Risk
+* Wandering
+* Location Confirmation
+
+Medical
+
+* Dehydration
+* Fever
+* Medication Management
+* Vital Sign Monitoring
+
+Rights Protection
+
+* Physical Restraint
+* Behavioral Restriction
+* Dignity Protection
+* Abuse Prevention
+
+Daily Living
+
+* Oral Care
+* Bathing
+* Meal Intake
+* Toileting
+* Mobility
+* Sleep Rhythm
+
+Each Knowledge Node represents a reusable concept independent of facility-specific terminology.
+
+---
+
+# 8. knowledge_relations
+
+Knowledge Nodes are connected through explicit relationships.
 
 Examples:
 
-- ADL
-- IADL
-- Nutrition
-- Hydration
-- Hygiene
-- Mobility
-- Sleep
-- Safety
-- Communication
-- Mental Health
-- Rights Protection
+```text
+Oral Care
+      │
+      └── supports → Hygiene
 
-## 5. knowledge_nodes
+Hygiene
+      │
+      └── supports → ADL
 
-Defines individual knowledge concepts.
+Reduced Mobility
+      │
+      └── increases → Fall Risk
 
-Examples:
+Hydration
+      │
+      └── supports → Physical Health
 
-- Oral Care
-- Bathing
-- Walking
-- Fall Risk
-- Sleep Rhythm
-- Hydration
-- Meal Intake
-- Location Confirmation
-- Self Care
-- Daily Routine
+Sleep Rhythm
+      │
+      └── affects → Mental Health
+```
 
-## 6. knowledge_relations
+Supported relationship types include:
 
-Defines relationships between knowledge nodes.
+* supports
+* affects
+* causes
+* prevents
+* indicates
+* increases
+* decreases
+* related_to
+* depends_on
 
-Examples:
+Knowledge is managed as a graph rather than a fixed hierarchy.
 
-- Oral Care supports Hygiene
-- Hygiene supports ADL
-- Walking relates_to Mobility
-- Reduced Mobility increases Fall Risk
-- Hydration supports Physical Health
-- Sleep Rhythm affects Mental Health
+---
 
-## 7. event_type_knowledge
+# 9. event_type_knowledge
 
-Defines mappings from Event Types to Knowledge Nodes.
+This master defines how standardized Event Types generate Knowledge.
 
 Examples:
 
-- 歯磨き → Oral Care
-- 歯磨き → Hygiene
-- 歯磨き → Self Care
-- 就寝 → Sleep
-- 就寝 → Daily Routine
-- 廊下 → Location Confirmation
-- 転倒 → Fall Risk
-- 転倒 → Mobility
-- 転倒 → Safety
+| Event Type         | Knowledge Node         |
+| ------------------ | ---------------------- |
+| Oral Care          | Oral Care              |
+| Oral Care          | Hygiene                |
+| Oral Care          | ADL                    |
+| Bedtime            | Sleep Rhythm           |
+| Bedtime            | Daily Routine          |
+| Hallway            | Location Confirmation  |
+| Fall               | Fall Risk              |
+| Fall               | Injury Risk            |
+| Physical Restraint | Rights Protection      |
+| Physical Restraint | Behavioral Restriction |
 
-## 8. Responsibility Separation
+One Event Type may generate multiple Knowledge Nodes.
 
-Facility differences are absorbed by event_mapper.
+Knowledge generation is deterministic and managed through master data.
 
-Semantic meaning is defined by Knowledge Master.
+---
 
-Administrative differences are handled by Review Master.
+# 10. Initial Knowledge Growth Policy
 
-## 9. AI Usage
+The first phase of Knowledge development prioritizes risk management and administrative review.
 
-AI uses Knowledge Master to reason from structured concepts rather than raw text.
+The objective is to identify observations requiring organizational attention.
 
-## 10. Design Principles
+Initial focus areas include:
 
-1. Knowledge is derived from Observation.
-2. Knowledge is managed as master data.
-3. Application code should not contain semantic classification rules.
-4. One Event Type may connect to multiple Knowledge Nodes.
-5. Knowledge Nodes may connect to each other as a graph.
-6. Review and Knowledge remain independent.
+* Safety Risk
+* Incident Risk
+* Medical Attention
+* Rights Protection
+* Behavioral Restriction
+* Physical Restraint
+* Committee Review Support
+* Location Confirmation
+* Monitoring Requirements
+
+This enables RISEN to deliver immediate operational value while establishing a foundation for future knowledge expansion.
+
+Future phases will expand into:
+
+* ADL
+* IADL
+* Quality of Life
+* Care Quality
+* Rehabilitation
+* Social Participation
+* Preventive Care
+
+---
+
+# 11. Responsibility Separation
+
+RISEN separates responsibilities across master data.
+
+| Component        | Responsibility                |
+| ---------------- | ----------------------------- |
+| event_mapper     | Facility-specific terminology |
+| event_types      | Standardized observations     |
+| Knowledge Master | Semantic meaning              |
+| Review Master    | Administrative evaluation     |
+| AI               | Reasoning                     |
+| Dashboard        | Visualization                 |
+
+Each layer has a single responsibility and remains independent.
+
+---
+
+# 12. AI Usage
+
+AI consumes structured Knowledge rather than raw observations whenever possible.
+
+Reasoning follows this sequence:
+
+```text
+Observation
+        ↓
+Event Type
+        ↓
+Knowledge Nodes
+        ↓
+Knowledge Relationships
+        ↓
+Knowledge Graph
+        ↓
+AI Reasoning
+        ↓
+Recommendation
+```
+
+This approach improves explainability, consistency, and portability across organizations.
+
+---
+
+# 13. Seed Knowledge Examples
+
+Initial Knowledge Nodes may include:
+
+Safety
+
+* Fall Risk
+* Injury Risk
+* Wandering
+* Missing Person Risk
+
+Medical
+
+* Dehydration
+* Fever
+* Medication Management
+* Pain Observation
+
+Rights Protection
+
+* Physical Restraint
+* Behavioral Restriction
+* Consent Confirmation
+* Abuse Prevention
+
+Monitoring
+
+* Location Confirmation
+* Vital Monitoring
+* Observation Required
+
+Committee Support
+
+* Incident Review
+* Medical Review
+* Rights Protection Review
+* Committee Review
+
+These seed nodes provide the initial foundation for Knowledge Graph construction.
+
+---
+
+# 14. Design Principles
+
+RISEN Knowledge Master follows these principles.
+
+1. Observation is the Source of Truth.
+2. Knowledge is derived from standardized Event Types.
+3. Knowledge evolves through Master Data.
+4. One Event Type may generate multiple Knowledge Nodes.
+5. Knowledge Nodes form a graph.
+6. Knowledge is independent from Reviews.
+7. Facility differences are absorbed by Mapper.
+8. Administrative differences are absorbed by Review.
+9. AI reasons from Knowledge rather than raw text.
+10. New functionality begins by extending Knowledge Master before modifying application code.
+
+---
+
+# 15. Future Evolution
+
+The Knowledge Master is expected to expand continuously.
+
+Future enhancements include:
+
+* richer Knowledge Graph relationships
+* risk scoring
+* evidence-based care pathways
+* predictive reasoning
+* organization-specific knowledge packages
+* AI-assisted knowledge discovery
+
+These enhancements will be achieved by expanding master data while preserving the Observation-centered architecture.
+
+---
+
+# 16. Conclusion
+
+Knowledge Master is the semantic foundation of the RISEN platform.
+
+Observation records facts.
+
+Knowledge assigns meaning.
+
+Review provides governance.
+
+AI performs reasoning.
+
+Recommendation supports decision-making.
+
+By managing meaning as master data rather than application logic, RISEN enables scalable knowledge management, explainable AI, and sustainable digital transformation across welfare and care organizations.
