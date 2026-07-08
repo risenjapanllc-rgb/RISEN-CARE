@@ -353,3 +353,13 @@ AI transforms these patterns into understandable recommendations for care profes
 The ultimate goal is not prediction.
 
 The ultimate goal is earlier understanding, better support, and improved quality of life for the people receiving care.
+
+---
+
+# Pattern Discovery
+
+The value of AI is not prediction.
+
+The value of AI is discovering recurring observation patterns that are difficult for humans to recognize.
+
+Behavior Intelligence Engine uses AI to support human understanding rather than replace professional judgment.
