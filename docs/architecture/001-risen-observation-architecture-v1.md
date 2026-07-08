@@ -1,336 +1,415 @@
-# 001 RISEN Observation Architecture v1
+# 001 RISEN Observation Architecture
 
-**Version:** 1.0
-**Status:** Draft
+**Version:** 2.0  
+**Status:** Stable  
 **Last Updated:** 2026-07-08
 
 ---
 
 # 1. Purpose
 
-This document defines the core architecture of the RISEN platform.
+This document defines the fundamental architecture of the RISEN Knowledge Platform.
 
 RISEN is not a traditional care record system.
 
-RISEN is an **Observation-centered Knowledge Platform** that transforms daily observations into structured knowledge for AI reasoning, decision support, and organizational improvement.
+RISEN is an **Observation-centered Knowledge Platform** that transforms daily observations into structured knowledge, enabling explainable AI reasoning, organizational learning, and continuous improvement.
 
-The purpose of this document is to establish the architectural principles that remain stable even as implementation technologies evolve.
+The architecture is designed to remain stable regardless of changes in implementation technology.
 
 ---
 
 # 2. Core Philosophy
 
-RISEN is based on a single architectural principle.
+RISEN is built on a single architectural principle.
 
 > **Observation is the Source of Truth.**
 
-Everything else is derived from observations.
+Observation is never discarded.
 
-```text
+Knowledge is derived from Observation.
+
+AI reasons using Knowledge while preserving the original Observation.
+
+```
 Observation
-      ↓
+        ↓
 Knowledge
-      ↓
+        ↓
+Review
+        ↓
 AI Reasoning
-      ↓
+        ↓
 Recommendation
-      ↓
+        ↓
 Dashboard
-      ↓
+        ↓
 Administration
 ```
 
-Observations represent objective facts.
-
-Knowledge represents meaning.
-
-AI generates reasoning based on knowledge.
-
-Dashboards visualize outcomes.
-
-Administration supports governance and compliance.
-
-Each layer has a different responsibility and should remain independent.
+Each architectural layer has a single responsibility.
 
 ---
 
-# 3. Architectural Layers
+# 3. Observation Architecture
 
-## Layer 1 — Observation
+Observation consists of two complementary components.
 
-Observation is the foundation of the platform.
+```
+Observation
 
-An Observation represents a factual event that occurred in the care environment.
+├── Structured Observation
+│       ├── User
+│       ├── Event Type
+│       ├── DateTime
+│       ├── Source
+│       └── Metadata
+│
+└── Narrative Observation
+        ├── Summary
+        └── Memo
+```
 
-Examples include:
+Structured Observation enables consistent processing.
 
-* Meals
-* Hydration
-* Oral care
-* Sleep
-* Toileting
-* Mobility
-* Location confirmation
-* Communication
-* Medication
-* Vital signs
+Narrative Observation preserves context, nuance, and human expression.
 
-An Observation should describe **what happened**, not **why it happened**.
+Both are essential.
+
+Observation should describe **what happened**, not **why it happened**.
 
 Interpretation belongs to higher layers.
 
 ---
 
-## Layer 2 — Knowledge
+# 4. Knowledge Architecture
 
-Knowledge adds semantic meaning to observations.
+Knowledge represents semantic meaning extracted from Observation.
 
-Multiple observations may contribute to a single concept.
+Example
 
-Examples:
+```
+Observation
 
-```text
-Oral Care
-      ↓
-Hygiene
-      ↓
-Self-care
-      ↓
-Activities of Daily Living (ADL)
+歯磨き
+
+↓
+
+Event Type
+
+清潔
+
+↓
+
+Knowledge
+
+口腔ケア
+
+↓
+
+清潔保持
+
+↓
+
+ADL
 ```
 
-Knowledge is designed to support AI reasoning rather than human-readable narratives.
+Knowledge does not replace Observation.
+
+Knowledge explains Observation.
 
 ---
 
-## Layer 3 — AI Reasoning
+# 5. Knowledge Graph
 
-AI operates on structured knowledge.
+Knowledge is organized as a graph.
 
-The AI should not depend on raw text whenever structured observations are available.
+```
+Knowledge Node
 
-Inputs include:
+↓
 
-* Observations
-* Knowledge
-* Relationships
-* Review results
+Relation
 
-Outputs include:
+↓
 
-* Insights
-* Risk detection
-* Recommendations
-* Trend analysis
+Knowledge Node
+```
+
+Example
+
+```
+口腔ケア
+
+supports
+
+清潔保持
+
+supports
+
+ADL
+```
+
+Knowledge Graph enables reasoning beyond individual observations.
 
 ---
 
-## Layer 4 — Dashboard
+# 6. AI Reasoning
+
+AI reasons using both structured knowledge and the original Observation.
+
+```
+Observation
+
+├── Structured Observation
+└── Narrative Observation
+
+        ↓
+
+Knowledge Graph
+
+        ↓
+
+AI Reasoning
+```
+
+Structured Observation provides consistency.
+
+Narrative Observation preserves nuance.
+
+Knowledge Graph provides explainable reasoning.
+
+AI should never rely on narrative text alone.
+
+Neither should AI ignore narrative context.
+
+---
+
+# 7. Dashboard
 
 Dashboards visualize information generated by the platform.
 
 Dashboards do not perform interpretation.
 
-Their role is to present information generated by upstream layers.
+Their role is to present information produced by upstream layers.
 
 ---
 
-## Layer 5 — Administration
+# 8. Administration
 
 Administration manages governance.
 
 Examples include:
 
-* Review workflows
-* Compliance
-* Audit logs
-* Master data
-* Permissions
+- Review workflows
+- Compliance
+- Audit logs
+- Master Data
+- Permissions
 
-Administrative requirements should not alter Observation definitions.
-
----
-
-# 4. Observation First Principle
-
-RISEN always begins with observations.
-
-New functionality should never bypass the Observation layer.
-
-Before implementing any feature, the following question must be answered:
-
-> **What new observation does this feature represent?**
-
-If a feature cannot be expressed as an Observation, its architectural role should be reconsidered.
+Administrative requirements should never modify the original Observation.
 
 ---
 
-# 5. Separation of Responsibilities
+# 9. Observation First Principle
 
-Each architectural layer has a clearly defined responsibility.
+RISEN always begins with Observation.
 
-| Layer          | Responsibility    |
-| -------------- | ----------------- |
-| Observation    | Facts             |
-| Knowledge      | Meaning           |
-| AI Reasoning   | Interpretation    |
-| Recommendation | Suggested actions |
-| Dashboard      | Visualization     |
-| Administration | Governance        |
+Every new feature should first answer the following question:
 
-Responsibilities must not overlap.
+> **What Observation does this feature represent?**
+
+If the feature cannot be represented as an Observation, its architectural role should be reconsidered.
 
 ---
 
-# 6. Mapper Strategy
+# 10. Separation of Responsibilities
 
-Care facilities use different terminology.
+| Layer | Responsibility |
+|--------|----------------|
+| Observation | Facts |
+| Knowledge | Meaning |
+| Review | Administrative Perspective |
+| AI Reasoning | Interpretation |
+| Recommendation | Suggested Actions |
+| Dashboard | Visualization |
+| Administration | Governance |
 
-RISEN absorbs these differences through the Event Mapper.
+Each layer has a single responsibility.
 
-Example:
+Responsibilities should never overlap.
 
-```text
-"Brushed teeth"
-        ↓
-Oral Care
+---
 
-"Hallway"
-        ↓
-Location Confirmation
+# 11. Mapper Strategy
 
-"Bedtime"
-        ↓
-Sleep
+Different facilities use different terminology.
+
+RISEN absorbs these differences using Event Mapper.
+
+Example
+
+```
+"歯磨き"
+
+↓
+
+清潔
+
+"廊下"
+
+↓
+
+所在確認
+
+"就寝"
+
+↓
+
+睡眠
 ```
 
-Facility-specific vocabulary should be managed in master data.
+Facility-specific vocabulary belongs in master data.
 
-Business logic should not depend on facility-specific wording.
-
----
-
-# 7. Master-Driven Architecture
-
-RISEN prefers configurable master data over application logic.
-
-Classification rules should be maintained through:
-
-* Event Mapper
-* Event Types
-* Review Types
-* Knowledge definitions
-
-instead of increasing conditional statements in source code.
-
-This approach improves maintainability, scalability, and adaptability across organizations.
+Business logic should remain independent of local terminology.
 
 ---
 
-# 8. Review Architecture
+# 12. Master-Driven Architecture
 
-Reviews are independent from observations.
+RISEN evolves primarily through master data.
 
-An observation may belong to multiple review domains.
+Core masters include:
 
-Examples:
+- Event Categories
+- Event Types
+- Event Mapper
+- Review Types
+- Knowledge Categories
+- Knowledge Nodes
+- Knowledge Relations
 
-```text
-Fall
-    ↓
+Business logic should grow through master definitions rather than application code.
+
+---
+
+# 13. Review Architecture
+
+Reviews are independent administrative perspectives.
+
+One Observation may belong to multiple Reviews.
+
+Example
+
+```
+転倒
+
+↓
+
 Incident Review
 
-Fall
-    ↓
+↓
+
 Medical Review
 
-Fall
-    ↓
+↓
+
 Rights Protection Review
 ```
 
-Review represents administrative and organizational perspectives.
+Reviews classify organizational responsibilities.
 
-It does not redefine the original observation.
-
----
-
-# 9. Knowledge Growth
-
-Knowledge evolves continuously.
-
-New observations enrich the knowledge base.
-
-The platform is designed to learn through:
-
-* New Event Mappings
-* New Knowledge Relationships
-* Additional Review Definitions
-* AI Feedback
-
-Growth occurs primarily through master data rather than application code.
+They never redefine the original Observation.
 
 ---
 
-# 10. Design Principles
+# 14. Knowledge Growth
+
+Knowledge continuously evolves.
+
+Growth occurs through:
+
+- New Event Mappings
+- New Knowledge Nodes
+- New Knowledge Relations
+- Additional Review Definitions
+- AI Feedback
+
+RISEN grows by enriching master data rather than increasing application logic.
+
+---
+
+# 15. Design Principles
 
 RISEN follows these principles.
 
-1. Observation is the source of truth.
-2. Facts and interpretation must remain separate.
-3. Business logic should reside in master data whenever possible.
-4. Facility-specific differences are absorbed by Mapper.
-5. Administrative differences are absorbed by Review.
-6. AI consumes structured knowledge rather than raw text.
-7. Every architectural layer has a single responsibility.
-8. New features begin with defining new observations.
+1. Observation is the Source of Truth.
+2. Observation contains both Structured and Narrative information.
+3. Knowledge explains Observation.
+4. Review represents administrative viewpoints.
+5. AI reasons using Knowledge Graph while preserving Observation context.
+6. Mapper absorbs facility-specific terminology.
+7. Business logic resides primarily in master data.
+8. Every architectural layer has a single responsibility.
 
 ---
 
-# 11. Future Architecture
+# 16. Long-Term Architecture
 
-The long-term architecture of RISEN is:
-
-```text
+```
 Google Spreadsheet
         ↓
-Observation Platform
+Observation
+
+├── Structured Observation
+└── Narrative Observation
+
         ↓
-Knowledge Platform
+
+Knowledge Graph
+
         ↓
+
+Review
+
+        ↓
+
 AI Reasoning
+
         ↓
+
 Recommendation
+
         ↓
+
 Dashboard
+
         ↓
+
 Administration
 ```
 
-The Observation Platform provides reliable facts.
+Observation provides reliable facts.
 
-The Knowledge Platform provides meaning.
+Knowledge provides meaning.
 
-AI generates reasoning from structured knowledge.
+Review provides governance.
+
+AI provides reasoning.
 
 Recommendations support decision-making.
 
 Dashboards present information.
 
-Administration ensures governance and compliance.
+Administration ensures sustainability.
 
 ---
 
-# 12. Conclusion
+# 17. Conclusion
 
-RISEN is designed as a Knowledge Platform for welfare and care.
+RISEN is not designed around artificial intelligence.
 
-Its foundation is not artificial intelligence.
+RISEN is designed around Observation.
 
-Its foundation is not dashboards.
+AI is a consumer of the Knowledge Platform—not its foundation.
 
-Its foundation is not reporting.
-
-Its foundation is structured observations.
-
-By treating observations as the single source of truth, RISEN enables scalable knowledge management, explainable AI reasoning, and sustainable digital transformation across welfare and care organizations.
+By preserving both structured observations and narrative context, RISEN enables explainable AI, reusable organizational knowledge, and sustainable digital transformation across welfare and care organizations.
