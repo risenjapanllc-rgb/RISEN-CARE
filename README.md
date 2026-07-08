@@ -1,10 +1,14 @@
 # RISEN
 
-> **An Observation Intelligence Platform**
+An Observation Intelligence Platform
 
-**From Observation to Understanding**
+From Observation to Understanding
 
-*Understanding enables Better Care.*
+Understanding enables Better Care.
+
+Observe.
+Understand.
+Care.
 
 RISEN transforms observations into knowledge, knowledge into understanding, and understanding into better care.
 
