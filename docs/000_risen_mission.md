@@ -1,5 +1,11 @@
 # 000 RISEN Mission
 
+## Vision
+
+現場の知識が、未来の支援を育てる社会をつくる。
+
+---
+
 # RISEN Mission
 
 > **RISEN is an Observation Intelligence Platform.**
@@ -21,12 +27,6 @@ Behavior Intelligence reveals recurring patterns.
 Artificial Intelligence expands human understanding by discovering patterns that are difficult to recognize from individual observations alone.
 
 Ultimately, RISEN helps people notice meaningful change before it becomes a crisis.
-
----
-
-## Vision
-
-現場の知識が、未来の支援を育てる社会をつくる。
 
 ---
 
