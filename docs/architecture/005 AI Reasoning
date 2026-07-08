@@ -1,0 +1,208 @@
+# 005 RISEN AI Reasoning v1
+
+**Version:** 1.0
+**Status:** Draft
+**Last Updated:** 2026-07-08
+
+---
+
+# 1. Purpose
+
+This document defines how Artificial Intelligence operates within the RISEN platform.
+
+AI is not the source of truth.
+
+Observation is the source of truth.
+
+AI reasons from structured data produced by the Observation, Knowledge, and Review layers.
+
+---
+
+# 2. Position in the Architecture
+
+```text
+Observation
+      ↓
+Knowledge
+      ↓
+Review
+      ↓
+AI Reasoning
+      ↓
+Recommendation
+      ↓
+Dashboard
+```
+
+AI is positioned after structured data has been established.
+
+---
+
+# 3. AI Inputs
+
+AI receives structured information rather than raw free text whenever possible.
+
+Inputs include:
+
+* Observations
+* Event Types
+* Knowledge Nodes
+* Knowledge Relationships
+* Review Results
+* Time Series
+* User Profiles
+* Organizational Context
+
+---
+
+# 4. AI Objectives
+
+AI is designed to assist professionals by:
+
+* identifying patterns
+* detecting risks
+* explaining trends
+* generating summaries
+* recommending actions
+* supporting decision-making
+
+AI augments human expertise rather than replacing it.
+
+---
+
+# 5. Reasoning Process
+
+The reasoning process follows four stages.
+
+```text
+Observation
+        ↓
+Knowledge
+        ↓
+Reasoning
+        ↓
+Recommendation
+```
+
+Each stage produces structured outputs that can be inspected and explained.
+
+---
+
+# 6. Explainability
+
+Every recommendation should be traceable.
+
+Example
+
+```text
+Recommendation
+
+Increase hydration monitoring.
+```
+
+Reasoning
+
+```text
+Reduced water intake
+Repeated dehydration observations
+High temperature
+```
+
+Observation
+
+```text
+Hydration
+Vital Signs
+Daily Records
+```
+
+Recommendations should always be supported by observable evidence.
+
+---
+
+# 7. Recommendation
+
+Recommendations are suggestions.
+
+They are not automatic decisions.
+
+Examples include:
+
+* Increase observation frequency
+* Schedule medical review
+* Encourage mobility exercises
+* Monitor nutritional intake
+* Confirm medication adherence
+
+Final decisions remain with care professionals.
+
+---
+
+# 8. Continuous Learning
+
+The platform improves through:
+
+* new observations
+* expanded knowledge
+* updated mappings
+* additional review definitions
+* validated feedback
+
+Knowledge grows before AI models require modification.
+
+---
+
+# 9. AI Boundaries
+
+AI should not:
+
+* modify observations
+* overwrite reviews
+* replace professional judgment
+* create facts without evidence
+
+AI operates only on available structured information.
+
+---
+
+# 10. Design Principles
+
+1. Observation is the source of truth.
+2. AI consumes structured knowledge.
+3. Every recommendation must be explainable.
+4. Human professionals remain responsible for decisions.
+5. AI improves through richer knowledge rather than more application logic.
+
+---
+
+# 11. Long-Term Vision
+
+```text
+Observation
+      ↓
+Knowledge Graph
+      ↓
+AI Reasoning
+      ↓
+Recommendation Engine
+      ↓
+Dashboard
+      ↓
+Administration
+```
+
+As the Knowledge Graph expands, AI becomes capable of producing increasingly accurate, transparent, and organization-wide recommendations while preserving the integrity of the original observations.
+
+---
+
+# 12. Conclusion
+
+AI is not the foundation of RISEN.
+
+Observation is the foundation.
+
+Knowledge provides meaning.
+
+Review provides governance.
+
+AI connects these layers to generate explainable recommendations that support professionals in welfare and care settings.
