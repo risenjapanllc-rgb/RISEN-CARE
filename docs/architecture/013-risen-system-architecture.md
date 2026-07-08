@@ -1,8 +1,8 @@
-# 013 RISEN System Architecture
+# RISEN System Architecture
 
-**Version:** 1.0  
-**Status:** Draft  
-**Last Updated:** 2026-07-08
+RISEN is an Observation Intelligence Platform.
+
+The architecture transforms observations into understanding through structured knowledge, state modeling, and explainable AI.
 
 ---
 
