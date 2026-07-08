@@ -1,0 +1,196 @@
+# 004 RISEN Review Model v1
+
+**Version:** 1.0
+**Status:** Draft
+**Last Updated:** 2026-07-08
+
+---
+
+# 1. Purpose
+
+This document defines the Review Model of the RISEN platform.
+
+A Review is an organizational or administrative evaluation derived from Observations.
+
+Reviews do not replace observations.
+
+Reviews do not redefine knowledge.
+
+Reviews determine whether an observation requires attention under organizational, legal, medical, or operational policies.
+
+---
+
+# 2. Position in the Architecture
+
+```text
+Observation
+      │
+      ├──────────────┐
+      ▼              ▼
+Knowledge        Review
+      │              │
+      └──────┬───────┘
+             ▼
+       AI Reasoning
+             ▼
+      Recommendation
+```
+
+Observation is the source.
+
+Knowledge represents meaning.
+
+Review represents governance.
+
+---
+
+# 3. Definition
+
+A Review is a structured evaluation.
+
+Examples include:
+
+* Incident Review
+* Medical Review
+* Rights Protection Review
+* Committee Review
+
+Reviews classify organizational actions rather than describing events.
+
+---
+
+# 4. Review Independence
+
+Reviews are independent from Knowledge.
+
+Example
+
+Observation
+
+```text
+Fall
+```
+
+Knowledge
+
+```text
+Mobility
+Balance
+Safety
+```
+
+Review
+
+```text
+Incident Review
+Medical Review
+```
+
+Neither layer modifies the other.
+
+---
+
+# 5. Multiple Reviews
+
+One Observation may require multiple Reviews.
+
+Example
+
+```text
+Physical Restraint
+```
+
+↓
+
+```text
+Rights Protection Review
+Medical Review
+Committee Review
+```
+
+RISEN supports many-to-many relationships between Event Types and Review Types.
+
+---
+
+# 6. Review Types
+
+Typical Review Types include:
+
+* Rights Protection
+* Medical
+* Incident
+* Committee
+* Infection Control
+* Risk Management
+
+Additional review domains can be added without changing application logic.
+
+---
+
+# 7. Review Workflow
+
+The Review process consists of:
+
+```text
+Observation
+        ↓
+Event Type
+        ↓
+Review Type
+        ↓
+Review Status
+        ↓
+Completed Review
+```
+
+Review workflows may differ between organizations while maintaining the same Observation model.
+
+---
+
+# 8. Administrative Independence
+
+Administrative rules differ by region and organization.
+
+RISEN absorbs these differences through Review definitions rather than application code.
+
+This allows Observation and Knowledge to remain reusable.
+
+---
+
+# 9. AI Usage
+
+AI may use Review information to:
+
+* prioritize risks
+* identify overdue reviews
+* summarize review history
+* detect recurring issues
+
+AI does not determine legal responsibility.
+
+Human review remains authoritative.
+
+---
+
+# 10. Design Principles
+
+1. Observation remains unchanged.
+2. Reviews are administrative evaluations.
+3. One Observation may require multiple Reviews.
+4. Review logic belongs in master data.
+5. Organizations may extend Review Types.
+6. AI supports Reviews but does not replace human judgment.
+
+---
+
+# 11. Conclusion
+
+The Review Model separates governance from meaning.
+
+Observation records facts.
+
+Knowledge explains facts.
+
+Review determines organizational response.
+
+This separation enables RISEN to adapt to different regulations and organizational policies while maintaining a consistent Observation Platform.
