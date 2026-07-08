@@ -1,4 +1,10 @@
-# RISEN Knowledge OS
+# RISEN
+
+> **An Observation Intelligence Platform**
+
+**From Observation to Understanding**
+
+*Understanding enables Better Care.*
 
 > **From Observation to Knowledge**
 
