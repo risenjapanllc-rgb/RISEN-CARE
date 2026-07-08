@@ -1,5 +1,9 @@
 # RISEN
 
+>RISEN helps people understand what matters before it becomes a crisis.
+
+>（RISENは、大きな問題になる前に、本当に大切な変化に気づくことを支援する。）
+
 **An Observation Intelligence Platform**
 
 **From Observation to Understanding**
