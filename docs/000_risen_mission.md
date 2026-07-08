@@ -1,5 +1,29 @@
 # 000 RISEN Mission
 
+# RISEN Mission
+
+> **RISEN is an Observation Intelligence Platform.**
+
+RISEN is an Observation Intelligence Platform that transforms observations into understanding.
+
+Its purpose is not simply to record events.
+
+Its purpose is to discover patterns, understand changes, and support better care through accumulated observations.
+
+Observation is the foundation.
+
+Knowledge gives observations meaning.
+
+State represents the current condition.
+
+Behavior Intelligence reveals recurring patterns.
+
+Artificial Intelligence expands human understanding by discovering patterns that are difficult to recognize from individual observations alone.
+
+Ultimately, RISEN helps people notice meaningful change before it becomes a crisis.
+
+---
+
 ## Vision
 
 現場の知識が、未来の支援を育てる社会をつくる。
