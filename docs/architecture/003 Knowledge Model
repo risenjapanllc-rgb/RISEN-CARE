@@ -1,0 +1,311 @@
+# 003 RISEN Knowledge Model v1
+
+**Version:** 1.0
+**Status:** Draft
+**Last Updated:** 2026-07-08
+
+---
+
+# 1. Purpose
+
+This document defines the Knowledge Model of the RISEN platform.
+
+Knowledge is created from structured observations.
+
+Its purpose is to transform isolated facts into connected meaning that can be understood by humans, analyzed by AI, and reused across organizations.
+
+Knowledge is not a replacement for Observation.
+
+Knowledge is the semantic layer built upon Observation.
+
+---
+
+# 2. Position in the Architecture
+
+The Knowledge layer is located between Observation and AI Reasoning.
+
+```text
+Observation
+      ↓
+Knowledge
+      ↓
+AI Reasoning
+      ↓
+Recommendation
+```
+
+Observation records facts.
+
+Knowledge organizes meaning.
+
+AI reasons from Knowledge.
+
+---
+
+# 3. Definition of Knowledge
+
+Knowledge is a structured representation of the meaning contained within one or more observations.
+
+Knowledge answers questions such as:
+
+* What does this observation represent?
+* What concept is involved?
+* What capability is affected?
+* What risk may exist?
+* What pattern is emerging?
+
+Knowledge is independent from the wording used by individual facilities.
+
+---
+
+# 4. Observation → Knowledge
+
+An Observation may generate multiple Knowledge nodes.
+
+Example
+
+```text
+Observation
+──────────────
+Brushed Teeth
+```
+
+↓
+
+```text
+Knowledge
+
+Oral Care
+Hygiene
+Self Care
+ADL
+Daily Routine
+```
+
+A single Observation can contribute to multiple concepts simultaneously.
+
+---
+
+# 5. Knowledge Hierarchy
+
+Knowledge is organized as a graph rather than a fixed hierarchy.
+
+Example
+
+```text
+ADL
+ ├── Eating
+ ├── Toileting
+ ├── Mobility
+ └── Hygiene
+         │
+         └── Oral Care
+```
+
+Nodes may belong to multiple relationships.
+
+This enables flexible reasoning without duplicating data.
+
+---
+
+# 6. Knowledge Relationships
+
+Knowledge nodes may have multiple relationship types.
+
+Examples include:
+
+* Parent
+* Child
+* Related
+* Depends On
+* Indicates
+* Improves
+* Worsens
+* Causes
+* Prevents
+
+Example
+
+```text
+Oral Care
+      │
+      ├── improves → Hygiene
+      ├── supports → ADL
+      └── related → Infection Prevention
+```
+
+Relationships are first-class data.
+
+---
+
+# 7. Knowledge Categories
+
+Knowledge should be organized into reusable domains.
+
+Examples include:
+
+* ADL
+* IADL
+* Physical Health
+* Mental Health
+* Communication
+* Nutrition
+* Sleep
+* Mobility
+* Safety
+* Rights Protection
+* Social Participation
+* Environment
+
+Categories provide organization without limiting relationships.
+
+---
+
+# 8. Knowledge Independence
+
+Knowledge must remain independent from:
+
+* Facility terminology
+* Spreadsheet structure
+* Administrative reviews
+* AI implementation
+
+Knowledge should remain stable even if data sources change.
+
+---
+
+# 9. Relationship with Review
+
+Knowledge and Review have different responsibilities.
+
+Knowledge answers:
+
+> What does this mean?
+
+Review answers:
+
+> Does this require organizational or legal review?
+
+Example
+
+```text
+Observation
+      │
+      ▼
+Fall
+      │
+      ├── Knowledge
+      │       Mobility
+      │       Balance
+      │       Safety
+      │
+      └── Review
+              Incident Review
+              Medical Review
+```
+
+Review does not modify Knowledge.
+
+Knowledge does not determine Review.
+
+Both are derived independently from Observation.
+
+---
+
+# 10. Knowledge Growth
+
+Knowledge continuously evolves.
+
+Growth occurs through:
+
+* New Observation Types
+* New Knowledge Nodes
+* New Relationships
+* Improved Mapping
+* AI-assisted discovery
+
+Knowledge should grow through master data rather than application logic.
+
+---
+
+# 11. AI Input
+
+AI should consume structured Knowledge rather than raw observations whenever possible.
+
+Example
+
+Instead of:
+
+```text
+Brushed Teeth
+Hallway
+Lunch
+```
+
+AI receives:
+
+```text
+Hygiene
+Location Confirmation
+Nutrition
+Daily Routine
+ADL
+```
+
+Structured knowledge enables more consistent reasoning across facilities.
+
+---
+
+# 12. Design Principles
+
+The Knowledge Model follows these principles.
+
+1. Knowledge is derived from Observation.
+2. Knowledge represents meaning, not facts.
+3. One Observation may generate multiple Knowledge nodes.
+4. Knowledge is represented as a graph.
+5. Relationships are explicit.
+6. Knowledge is independent from Reviews.
+7. Knowledge is reusable across organizations.
+8. Knowledge grows primarily through master data.
+
+---
+
+# 13. Future Knowledge Graph
+
+The long-term Knowledge Graph is expected to evolve as follows.
+
+```text
+Observation
+      │
+      ▼
+Knowledge Nodes
+      │
+      ▼
+Knowledge Relationships
+      │
+      ▼
+Knowledge Graph
+      │
+      ▼
+AI Reasoning
+      │
+      ▼
+Recommendations
+```
+
+As the Knowledge Graph expands, the platform becomes capable of identifying patterns, predicting risks, and supporting evidence-based care.
+
+---
+
+# 14. Conclusion
+
+Knowledge is the semantic foundation of RISEN.
+
+Observation captures reality.
+
+Knowledge explains reality.
+
+AI reasons about reality.
+
+By separating facts from meaning, RISEN creates a reusable knowledge platform that supports care professionals, organizations, and future AI systems without depending on facility-specific language or implementation details.
