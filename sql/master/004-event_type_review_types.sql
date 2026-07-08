@@ -1,33 +1,59 @@
 -- ==========================================
 -- RISEN Knowledge OS
 -- Master Data
--- review_types
+-- event_type_review_types
 -- ==========================================
 
-INSERT INTO review_types
-(code, name, description)
+INSERT INTO event_type_review_types
+(event_type_id, review_type_id)
 VALUES
 
+-- ==========================================
+-- Incident
+-- ==========================================
+
 (
-  'incident_review',
-  '事故レビュー',
-  '事故・ヒヤリハット・転倒・転落等の事故対応レビュー'
+  (SELECT id FROM event_types WHERE code = 'incident'),
+  (SELECT id FROM review_types WHERE code = 'incident_review')
+),
+
+-- ==========================================
+-- Health
+-- ==========================================
+
+(
+  (SELECT id FROM event_types WHERE code = 'health'),
+  (SELECT id FROM review_types WHERE code = 'medical_review')
 ),
 
 (
-  'medical_review',
-  '医療レビュー',
-  '医療的判断・健康状態・受診・服薬等に関するレビュー'
+  (SELECT id FROM event_types WHERE code = 'medication'),
+  (SELECT id FROM review_types WHERE code = 'medical_review')
 ),
 
 (
-  'rights_protection_review',
-  '権利擁護レビュー',
-  '身体拘束・虐待防止・権利擁護に関するレビュー'
+  (SELECT id FROM event_types WHERE code = 'vital'),
+  (SELECT id FROM review_types WHERE code = 'medical_review')
+),
+
+-- ==========================================
+-- Physical Restraint / Behavioral Restriction
+-- ==========================================
+
+(
+  (SELECT id FROM event_types WHERE code = 'physical_restraint'),
+  (SELECT id FROM review_types WHERE code = 'rights_protection_review')
 ),
 
 (
-  'committee_review',
+  (SELECT id FROM event_types WHERE code = 'physical_restraint'),
+  (SELECT id FROM review_types WHERE code = 'medical_review')
+),
+
+(
+  (SELECT id FROM event_types WHERE code = 'physical_restraint'),
+  (SELECT id FROM review_types WHERE code = 'committee_review')
+);
   '委員会レビュー',
   '委員会での審議・報告・改善活動に関するレビュー'
 );
