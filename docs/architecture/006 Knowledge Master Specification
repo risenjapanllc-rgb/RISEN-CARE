@@ -1,0 +1,15 @@
+# 006 RISEN Knowledge Master Specification v1
+
+1. Purpose
+2. Position in Architecture
+3. Core Principle
+4. Knowledge Master Tables
+5. knowledge_categories
+6. knowledge_nodes
+7. knowledge_relations
+8. event_type_knowledge
+9. Mapper / Review / Knowledge の責務分離
+10. AI Usage
+11. Seed Master Examples
+12. Design Principles
+13. Future Extension
