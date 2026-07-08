@@ -119,6 +119,8 @@ Better Care is the ultimate goal.
 
 > **Help people understand meaningful change before it becomes a crisis.**
 
+---
+
 # Closing Statement
 
 Observation is the beginning of understanding.
