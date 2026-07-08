@@ -118,3 +118,9 @@ Better Care is the ultimate goal.
 # North Star
 
 > **Help people understand meaningful change before it becomes a crisis.**
+
+# Closing Statement
+
+Observation is the beginning of understanding.
+
+Understanding enables Better Care.
