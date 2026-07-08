@@ -130,3 +130,13 @@ RISENの目的は、
 
 このMissionを軸に、
 RISEN Knowledge OSは継続的に進化していく。
+
+---
+
+## AI Philosophy
+
+RISEN does not pursue artificial intelligence that replaces people.
+
+RISEN pursues artificial intelligence that helps people notice what would otherwise remain unnoticed.
+
+By discovering patterns hidden within observations, AI supports earlier understanding and better care.
