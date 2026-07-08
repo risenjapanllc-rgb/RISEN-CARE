@@ -126,3 +126,33 @@ Better Care is the ultimate goal.
 Observation is the beginning of understanding.
 
 Understanding enables Better Care.
+
+---
+
+---
+
+# RISEN Manifesto
+
+Observation is the beginning of understanding.
+
+Understanding is the foundation of better care.
+
+Artificial Intelligence discovers patterns.
+
+People create meaning.
+
+Together, they enable better care.
+
+RISEN exists to help people notice meaningful change before it becomes a crisis.
+
+---
+
+**RISEN**
+
+**An Observation Intelligence Platform**
+
+**From Observation to Understanding**
+
+**Understanding enables Better Care.**
+
+**Observe. Understand. Care.**
