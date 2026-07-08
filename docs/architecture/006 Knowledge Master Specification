@@ -1,15 +1,109 @@
 # 006 RISEN Knowledge Master Specification v1
 
-1. Purpose
-2. Position in Architecture
-3. Core Principle
-4. Knowledge Master Tables
-5. knowledge_categories
-6. knowledge_nodes
-7. knowledge_relations
-8. event_type_knowledge
-9. Mapper / Review / Knowledge の責務分離
-10. AI Usage
-11. Seed Master Examples
-12. Design Principles
-13. Future Extension
+## 1. Purpose
+
+This document defines the master data specification for the RISEN Knowledge Platform.
+
+Knowledge Master defines how Observations are transformed into reusable semantic knowledge.
+
+Knowledge is not implemented by adding application logic.
+
+Knowledge evolves through master data.
+
+## 2. Core Principle
+
+Knowledge evolves through master data, not application code.
+
+## 3. Target Tables
+
+The initial Knowledge Master consists of four tables:
+
+- knowledge_categories
+- knowledge_nodes
+- knowledge_relations
+- event_type_knowledge
+
+## 4. knowledge_categories
+
+Defines broad domains of knowledge.
+
+Examples:
+
+- ADL
+- IADL
+- Nutrition
+- Hydration
+- Hygiene
+- Mobility
+- Sleep
+- Safety
+- Communication
+- Mental Health
+- Rights Protection
+
+## 5. knowledge_nodes
+
+Defines individual knowledge concepts.
+
+Examples:
+
+- Oral Care
+- Bathing
+- Walking
+- Fall Risk
+- Sleep Rhythm
+- Hydration
+- Meal Intake
+- Location Confirmation
+- Self Care
+- Daily Routine
+
+## 6. knowledge_relations
+
+Defines relationships between knowledge nodes.
+
+Examples:
+
+- Oral Care supports Hygiene
+- Hygiene supports ADL
+- Walking relates_to Mobility
+- Reduced Mobility increases Fall Risk
+- Hydration supports Physical Health
+- Sleep Rhythm affects Mental Health
+
+## 7. event_type_knowledge
+
+Defines mappings from Event Types to Knowledge Nodes.
+
+Examples:
+
+- 歯磨き → Oral Care
+- 歯磨き → Hygiene
+- 歯磨き → Self Care
+- 就寝 → Sleep
+- 就寝 → Daily Routine
+- 廊下 → Location Confirmation
+- 転倒 → Fall Risk
+- 転倒 → Mobility
+- 転倒 → Safety
+
+## 8. Responsibility Separation
+
+Facility differences are absorbed by event_mapper.
+
+Semantic meaning is defined by Knowledge Master.
+
+Administrative differences are handled by Review Master.
+
+## 9. AI Usage
+
+AI uses Knowledge Master to reason from structured concepts rather than raw text.
+
+## 10. Design Principles
+
+1. Knowledge is derived from Observation.
+2. Knowledge is managed as master data.
+3. Application code should not contain semantic classification rules.
+4. One Event Type may connect to multiple Knowledge Nodes.
+5. Knowledge Nodes may connect to each other as a graph.
+6. Review and Knowledge remain independent.
