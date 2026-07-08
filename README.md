@@ -4,15 +4,15 @@
 
 RISENは、介護・福祉現場で発生するObservation（観察・記録）をKnowledge（知識）へ変換し、AIによる推論・可視化・意思決定支援へつなげるKnowledge Platformです。
 
+Observationを単なる記録として保存するのではなく、組織が継続的に育てるKnowledgeへ変換することを目的としています。
+
 ---
 
 # Mission
 
 **理解から、価値をつくる。**
 
-RISENは現場の出来事を単なる記録として保存するのではなく、Observationとして収集し、Knowledgeとして育てることを目的としています。
-
-データを蓄積するだけではなく、組織全体で共有・活用できる知識資産へ変換します。
+RISENは現場の出来事をObservationとして収集し、Knowledgeとして構造化し、組織全体で共有・活用できる知識資産へ育てます。
 
 ---
 
@@ -24,8 +24,9 @@ Observationを起点として、
 
 - 現場の可視化
 - 行政レビュー支援
-- AIによる推論
-- 組織Knowledgeの蓄積
+- Explainable AI
+- Knowledge Graph
+- 組織Knowledgeの継承
 
 を実現します。
 
@@ -41,25 +42,47 @@ Observationを起点として、
 
 RISENはObservation First Architectureを採用します。
 
-```text
+```
 Google Spreadsheet
         ↓
-Observation (events)
+
+Observation
+
+├── Structured Observation
+└── Narrative Observation
+
         ↓
-Event Type
+
+Knowledge Graph
+
         ↓
-Knowledge
-        ↓
+
 Review
+
         ↓
+
 AI Reasoning
+
         ↓
+
+Recommendation
+
+        ↓
+
 Dashboard
+
         ↓
+
 Administration
 ```
 
-AIは文章ではなくObservationとKnowledgeを扱います。
+ObservationはRISENの唯一のSource of Truthです。
+
+KnowledgeはObservationの意味を定義します。
+
+Reviewは行政・組織の視点を追加します。
+
+AIはKnowledge Graphを中心に推論し、必要に応じてObservationの文章（Narrative Observation）を参照します。
 
 ---
 
@@ -67,12 +90,14 @@ AIは文章ではなくObservationとKnowledgeを扱います。
 
 RISENでは以下の原則を採用します。
 
-- Observation First
-- コードよりMasterを育てる
+- Observation is the Source of Truth
+- ObservationはStructured ObservationとNarrative Observationで構成される
+- コードではなくMasterを育てる
 - Event Mapperで施設差を吸収する
 - Reviewで行政差を吸収する
-- Knowledgeで意味を定義する
-- AIはKnowledgeを入力として推論する
+- KnowledgeでObservationの意味を定義する
+- AIはKnowledge Graphを基盤として推論する
+- Narrative Observationは文脈・ニュアンスを補完する
 
 ---
 
@@ -81,9 +106,11 @@ RISENでは以下の原則を採用します。
 ```text
 RISEN/
 
+├── README.md
+│
 ├── docs/
 │   ├── architecture/
-│   │   ├── 001-risen-observation-architecture-v1.md
+│   │   ├── 001-risen-observation-architecture-v2.md
 │   │   ├── 002-data-model.md
 │   │   ├── 003-knowledge-model.md
 │   │   ├── 004-review-model.md
@@ -105,7 +132,7 @@ RISEN/
 │
 ├── dashboard/
 │
-└── README.md
+└── .github/
 ```
 
 ---
@@ -137,7 +164,7 @@ RISEN/
 
 # Database
 
-RISENはSupabase（PostgreSQL）を採用します。
+RISEN uses Supabase (PostgreSQL).
 
 ## Observation
 
@@ -163,21 +190,35 @@ RISENはSupabase（PostgreSQL）を採用します。
 
 # Development Flow
 
-```text
+```
 Observation
-        ↓
+
+↓
+
 Event Mapper
-        ↓
+
+↓
+
 Event Type
-        ↓
-Knowledge
-        ↓
+
+↓
+
+Knowledge Graph
+
+↓
+
 Review
-        ↓
+
+↓
+
 AI Reasoning
-        ↓
+
+↓
+
 Recommendation
-        ↓
+
+↓
+
 Dashboard
 ```
 
@@ -190,45 +231,42 @@ Dashboard
 - Supabase
 - PostgreSQL
 - GitHub
+- Knowledge Graph
 - AI (LLM)
-- Dashboard
 
 ---
 
 # Getting Started
 
-RISENを新しく構築する場合は、
+Start with:
 
 ```
 docs/implementation/010-implementation-guide.md
 ```
 
-から開始してください。
-
 ---
 
 # Development Policy
 
-RISENでは以下を最優先とします。
+RISEN development follows these priorities.
 
-1. Observationに意味を追加する
-2. Event Mapperで施設差を吸収する
-3. Reviewで行政差を吸収する
-4. Knowledgeで意味を定義する
-5. コード変更は最後の手段とする
+1. Preserve Observation.
+2. Enrich Knowledge through master data.
+3. Absorb facility differences using Event Mapper.
+4. Absorb administrative differences using Review.
+5. Build Knowledge Graph before AI.
+6. Modify application code only when master data cannot solve the problem.
 
 ---
 
-# Roadmap
-
-現在の開発フェーズ
+# Current Status
 
 - ✅ Observation Platform
 - ✅ Review Platform
 - ✅ Knowledge Platform
+- ✅ Knowledge Graph
 - ✅ Database Design
 - ✅ GAS Synchronization
-- 🔄 Knowledge Graph
 - 🔄 AI Reasoning
 - ⏳ Dashboard
 - ⏳ Administration
@@ -237,7 +275,7 @@ RISENでは以下を最優先とします。
 
 # License
 
-This project is under development.
+This project is currently under development.
 
 ---
 
@@ -245,6 +283,8 @@ This project is under development.
 
 **From Observation to Knowledge**
 
-Build knowledge.  
-Support people.  
-Empower care.
+Build Knowledge.
+
+Support People.
+
+Empower Care.
