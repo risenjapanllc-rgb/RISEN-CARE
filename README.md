@@ -1,30 +1,38 @@
 # RISEN
 
->RISEN helps people understand what matters before it becomes a crisis.
+## An Observation Intelligence Platform
 
->（RISENは、大きな問題になる前に、本当に大切な変化に気づくことを支援する。）
+> **RISEN helps people understand what matters before it becomes a crisis.**
 
-**An Observation Intelligence Platform**
-
-**From Observation to Understanding**
+**From Observation to Understanding.**
 
 **Understanding enables Better Care.**
 
-**Observe.**
-**Understand.**
-**Care.**
+---
 
+## Philosophy
 
+> **Observe. Understand. Care.**
 
-RISEN transforms observations into knowledge, knowledge into understanding, and understanding into better care.
+AI discovers patterns.
 
-It is designed to help care professionals discover meaningful patterns, understand changes over time, and support people through explainable AI.
+People create meaning.
 
-> **From Observation to Knowledge**
+Together they enable better care.
 
-RISENは、介護・福祉現場で発生するObservation（観察・記録）をKnowledge（知識）へ変換し、AIによる推論・可視化・意思決定支援へつなげるKnowledge Platformです。
+---
 
-Observationを単なる記録として保存するのではなく、組織が継続的に育てるKnowledgeへ変換することを目的としています。
+# What is RISEN?
+
+RISEN is an Observation Intelligence Platform for care and welfare.
+
+Rather than storing observations as records, RISEN transforms them into structured intelligence that helps professionals understand people more deeply.
+
+RISEN converts observations into Knowledge, State, Episodes, Patterns, and Trajectories that support explainable AI and better care.
+
+Observation is the beginning.
+
+Understanding is the goal.
 
 ---
 
@@ -32,92 +40,215 @@ Observationを単なる記録として保存するのではなく、組織が継
 
 **理解から、価値をつくる。**
 
-RISENは現場の出来事をObservationとして収集し、Knowledgeとして構造化し、組織全体で共有・活用できる知識資産へ育てます。
+RISEN collects everyday observations, structures them into reusable knowledge, and helps organizations continuously build intelligence that supports better care.
 
 ---
 
 # Vision
 
-RISENは介護・福祉分野におけるKnowledge Platformを目指します。
+RISEN aims to become the Observation Intelligence Platform for care and welfare.
 
-Observationを起点として、
+Starting from Observation, RISEN enables:
 
-- 現場の可視化
-- 行政レビュー支援
-- Explainable AI
+- Observation Intelligence
 - Knowledge Graph
-- 組織Knowledgeの継承
-
-を実現します。
-
----
-
-# Philosophy
-
-**「記録を残す」のではなく、知識を育てる。**
+- Explainable AI
+- Administrative Review Support
+- Organizational Knowledge Sharing
+- Preventive Care
+- Continuous Knowledge Evolution
 
 ---
 
 # Observation First Architecture
 
-RISENはObservation First Architectureを採用します。
+RISEN adopts an **Observation First Architecture**.
 
-```
+```text
 Google Spreadsheet
-        ↓
-
+        │
+        ▼
 Observation
 
 ├── Structured Observation
 └── Narrative Observation
 
-        ↓
-
+        │
+        ▼
 Knowledge Graph
 
-        ↓
+        │
+        ▼
+State Engine
 
-Review
+        │
+        ▼
+Observation Intelligence Engine
 
-        ↓
+        │
+        ▼
+Episode Engine
 
-AI Reasoning
+        │
+        ▼
+Pattern Discovery
 
-        ↓
+        │
+        ▼
+Behavior Trajectory Engine
 
-Recommendation
+        │
+        ▼
+Reasoning Engine
 
-        ↓
+        │
+        ▼
+Preventive Care Engine
 
+        │
+        ▼
+Knowledge Evolution Engine
+
+        │
+        ▼
 Dashboard
 
-        ↓
-
+        │
+        ▼
 Administration
 ```
 
-ObservationはRISENの唯一のSource of Truthです。
+Observation is the only Source of Truth.
 
-KnowledgeはObservationの意味を定義します。
+Knowledge defines the meaning of observations.
 
-Reviewは行政・組織の視点を追加します。
+State summarizes the current condition.
 
-AIはKnowledge Graphを中心に推論し、必要に応じてObservationの文章（Narrative Observation）を参照します。
+Episodes provide context.
+
+Patterns reveal recurring structures.
+
+Trajectories explain change over time.
+
+AI reasons from structured Observation Intelligence.
+
+Narrative Observation complements context and nuance.
 
 ---
 
 # Core Principles
 
-RISENでは以下の原則を採用します。
+RISEN follows these principles.
 
-- Observation is the Source of Truth
-- ObservationはStructured ObservationとNarrative Observationで構成される
-- コードではなくMasterを育てる
-- Event Mapperで施設差を吸収する
-- Reviewで行政差を吸収する
-- KnowledgeでObservationの意味を定義する
-- AIはKnowledge Graphを基盤として推論する
-- Narrative Observationは文脈・ニュアンスを補完する
+- Observation is the Source of Truth.
+- Observation consists of Structured Observation and Narrative Observation.
+- Structure before AI.
+- Build Knowledge before Reasoning.
+- AI reasons from Knowledge Graphs.
+- Narrative Observation provides context.
+- Event Mapper absorbs facility differences.
+- Review absorbs administrative differences.
+- Knowledge evolves through accumulated observations.
+- AI discovers patterns.
+- Professionals create meaning.
+- Recommendations must always be explainable.
+- Care remains human-centered.
+
+---
+
+# Observation Intelligence
+
+RISEN transforms observations into understanding.
+
+```text
+Observation
+        │
+        ▼
+Knowledge
+        │
+        ▼
+State
+        │
+        ▼
+Sequence
+        │
+        ▼
+Episode
+        │
+        ▼
+Pattern
+        │
+        ▼
+Trigger Candidate
+        │
+        ▼
+AI Reasoning
+        │
+        ▼
+Preventive Care
+```
+
+Observation is not the destination.
+
+Understanding is.
+
+---
+
+# Behavior Trajectory
+
+RISEN is designed to understand change over time.
+
+Instead of asking
+
+> What happened?
+
+RISEN asks
+
+> What does this observation mean?
+
+and eventually
+
+> What tends to happen before meaningful change occurs?
+
+Understanding trajectories enables earlier support.
+
+---
+
+# Knowledge Evolution
+
+Knowledge is not static.
+
+RISEN continuously improves organizational knowledge through accumulated observations.
+
+```text
+Observation
+
+↓
+
+Knowledge
+
+↓
+
+Episode
+
+↓
+
+Pattern
+
+↓
+
+Trajectory
+
+↓
+
+Outcome
+
+↓
+
+Knowledge Evolution
+```
+
+Organizations learn through experience.
 
 ---
 
@@ -137,7 +268,17 @@ RISEN/
 │   │   ├── 005-ai-reasoning.md
 │   │   ├── 006-knowledge-master-specification.md
 │   │   ├── 007-development-conventions.md
-│   │   └── 009-roadmap.md
+│   │   ├── 009-roadmap.md
+│   │   ├── 011-state-engine-architecture.md
+│   │   ├── 012-behavior-intelligence-engine.md
+│   │   ├── 013-risen-system-architecture.md
+│   │   ├── 014-ai-philosophy.md
+│   │   ├── 015-observation-intelligence-engine.md
+│   │   ├── 016-reasoning-engine.md
+│   │   ├── 017-risen-design-principles.md
+│   │   ├── 018-behavior-trajectory.md
+│   │   ├── 019-preventive-care-engine.md
+│   │   └── 020-knowledge-evolution-engine.md
 │   │
 │   └── implementation/
 │       └── 010-implementation-guide.md
@@ -157,36 +298,11 @@ RISEN/
 
 ---
 
-# Documentation
-
-## Architecture
-
-| No | Document |
-|----|----------|
-|001|Observation Architecture|
-|002|Data Model|
-|003|Knowledge Model|
-|004|Review Model|
-|005|AI Reasoning|
-|006|Knowledge Master Specification|
-|007|Development Conventions|
-|009|Roadmap|
-
----
-
-## Implementation
-
-| No | Document |
-|----|----------|
-|010|Implementation Guide|
-
----
-
 # Database
 
-RISEN uses Supabase (PostgreSQL).
+RISEN uses **Supabase (PostgreSQL).**
 
-## Observation
+Core entities include:
 
 - users
 - events
@@ -194,12 +310,12 @@ RISEN uses Supabase (PostgreSQL).
 - event_types
 - event_mapper
 
-## Review
+Review
 
 - review_types
 - event_type_review_types
 
-## Knowledge
+Knowledge
 
 - knowledge_categories
 - knowledge_nodes
@@ -210,7 +326,7 @@ RISEN uses Supabase (PostgreSQL).
 
 # Development Flow
 
-```
+```text
 Observation
 
 ↓
@@ -219,23 +335,35 @@ Event Mapper
 
 ↓
 
-Event Type
-
-↓
-
 Knowledge Graph
 
 ↓
 
-Review
+State
 
 ↓
 
-AI Reasoning
+Sequence
 
 ↓
 
-Recommendation
+Episode
+
+↓
+
+Pattern
+
+↓
+
+Trajectory
+
+↓
+
+Reasoning
+
+↓
+
+Preventive Care
 
 ↓
 
@@ -252,13 +380,14 @@ Dashboard
 - PostgreSQL
 - GitHub
 - Knowledge Graph
-- AI (LLM)
+- OpenAI
+- Observation Intelligence Engine
 
 ---
 
 # Getting Started
 
-Start with:
+Start with
 
 ```
 docs/implementation/010-implementation-guide.md
@@ -271,25 +400,45 @@ docs/implementation/010-implementation-guide.md
 RISEN development follows these priorities.
 
 1. Preserve Observation.
-2. Enrich Knowledge through master data.
-3. Absorb facility differences using Event Mapper.
-4. Absorb administrative differences using Review.
-5. Build Knowledge Graph before AI.
-6. Modify application code only when master data cannot solve the problem.
+2. Build Knowledge before AI.
+3. Structure before Reasoning.
+4. Enrich Knowledge through master data.
+5. Absorb facility differences using Event Mapper.
+6. Absorb administrative differences using Review.
+7. Keep recommendations explainable.
+8. Support professionals rather than replace them.
 
 ---
 
 # Current Status
 
-- ✅ Observation Platform
-- ✅ Review Platform
-- ✅ Knowledge Platform
-- ✅ Knowledge Graph
-- ✅ Database Design
-- ✅ GAS Synchronization
-- 🔄 AI Reasoning
-- ⏳ Dashboard
-- ⏳ Administration
+✅ Observation Platform
+
+✅ Knowledge Platform
+
+✅ Knowledge Graph
+
+✅ State Engine
+
+✅ Observation Intelligence Engine
+
+✅ Episode Engine
+
+✅ Pattern Discovery
+
+✅ Behavior Trajectory Engine (Architecture)
+
+✅ Reasoning Engine
+
+✅ Preventive Care Engine (Architecture)
+
+✅ Knowledge Evolution Engine (Architecture)
+
+🔄 AI Reasoning
+
+⏳ Dashboard
+
+⏳ Administration
 
 ---
 
@@ -301,10 +450,18 @@ This project is currently under development.
 
 # RISEN
 
-**From Observation to Knowledge**
+**An Observation Intelligence Platform**
 
-Build Knowledge.
+> **From Observation to Understanding.**
 
-Support People.
+> **Understanding enables Better Care.**
 
-Empower Care.
+**Observe.**
+
+**Understand.**
+
+**Care.**
+
+---
+
+**RISEN transforms observations into evolving knowledge and understanding, helping professionals recognize meaningful change before it becomes a crisis.**
