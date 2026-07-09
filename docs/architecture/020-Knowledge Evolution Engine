@@ -1,0 +1,336 @@
+# 020 Knowledge Evolution Engine
+
+**Version:** 1.0  
+**Status:** Vision  
+**Last Updated:** 2026-07-09
+
+---
+
+# 1. Purpose
+
+This document defines the Knowledge Evolution Engine of RISEN.
+
+The purpose of the Knowledge Evolution Engine is to continuously improve knowledge through accumulated observations.
+
+Knowledge is not static.
+
+Knowledge grows through observation.
+
+---
+
+# 2. Philosophy
+
+Traditional systems assume knowledge is predefined.
+
+RISEN assumes knowledge evolves.
+
+```text
+Observation
+
+↓
+
+Knowledge
+
+↓
+
+New Observation
+
+↓
+
+Refined Knowledge
+```
+
+Knowledge is continuously enriched by real-world care.
+
+---
+
+# 3. Why Knowledge Evolves
+
+Care environments constantly change.
+
+Every day professionals discover
+
+- new patterns
+- new interventions
+- new relationships
+- new behaviors
+
+RISEN should learn from these discoveries.
+
+---
+
+# 4. Sources of Knowledge Evolution
+
+Knowledge evolves from
+
+- repeated observations
+- repeated episodes
+- recurring trajectories
+- intervention outcomes
+- professional feedback
+- AI-supported pattern discovery
+
+No single observation changes knowledge.
+
+Evidence accumulates over time.
+
+---
+
+# 5. Evolution Process
+
+```text
+Observation
+
+↓
+
+Knowledge
+
+↓
+
+Episode
+
+↓
+
+Pattern
+
+↓
+
+Trajectory
+
+↓
+
+Outcome
+
+↓
+
+Knowledge Evolution
+```
+
+Knowledge improves continuously.
+
+---
+
+# 6. Types of Knowledge
+
+RISEN manages several kinds of knowledge.
+
+## Clinical Knowledge
+
+Medical and nursing concepts.
+
+---
+
+## Care Knowledge
+
+Daily care practices.
+
+---
+
+## Behavioral Knowledge
+
+Observed behavioral patterns.
+
+---
+
+## Environmental Knowledge
+
+Relationships with surroundings.
+
+---
+
+## Intervention Knowledge
+
+Effects of professional care.
+
+---
+
+## Organizational Knowledge
+
+Knowledge unique to each care organization.
+
+---
+
+# 7. AI's Role
+
+AI does not create truth.
+
+AI suggests hypotheses.
+
+Professionals validate them.
+
+```text
+Observation
+
+↓
+
+Pattern
+
+↓
+
+AI Hypothesis
+
+↓
+
+Professional Review
+
+↓
+
+Knowledge
+```
+
+Knowledge grows through collaboration.
+
+---
+
+# 8. Knowledge Confidence
+
+Every knowledge element has confidence.
+
+Confidence increases through
+
+- repeated evidence
+- multiple users
+- multiple episodes
+- intervention success
+
+Confidence decreases when evidence becomes inconsistent.
+
+---
+
+# 9. Knowledge Graph Evolution
+
+The Knowledge Graph is dynamic.
+
+Nodes may
+
+- grow
+- merge
+- split
+- gain confidence
+- lose confidence
+
+Relationships may strengthen or weaken over time.
+
+---
+
+# 10. Organizational Learning
+
+RISEN enables organizations to learn.
+
+```text
+One Observation
+
+↓
+
+Many Observations
+
+↓
+
+Shared Knowledge
+
+↓
+
+Better Care
+```
+
+Knowledge belongs to the organization.
+
+Not to AI alone.
+
+---
+
+# 11. Explainability
+
+Every evolved knowledge item must explain
+
+- supporting observations
+- supporting episodes
+- supporting trajectories
+- confidence
+- evolution history
+
+Knowledge must remain transparent.
+
+---
+
+# 12. Future Functions
+
+Potential implementations
+
+```text
+updateKnowledgeConfidence()
+
+discoverKnowledgeCandidate()
+
+mergeKnowledge()
+
+splitKnowledge()
+
+validateKnowledge()
+
+compareKnowledgeAcrossOrganizations()
+
+learnInterventionEffect()
+
+buildKnowledgeTimeline()
+```
+
+---
+
+# 13. Relationship with RISEN
+
+Knowledge Evolution strengthens every layer.
+
+```text
+Observation
+
+↓
+
+Knowledge Evolution
+
+↓
+
+Observation Intelligence
+
+↓
+
+Reasoning
+
+↓
+
+Preventive Care
+```
+
+As knowledge evolves,
+
+understanding improves.
+
+As understanding improves,
+
+care improves.
+
+---
+
+# 14. Final Vision
+
+RISEN is not only an Observation Intelligence Platform.
+
+RISEN is a continuously learning care platform.
+
+It learns from observations,
+
+improves knowledge,
+
+supports professionals,
+
+and contributes to better care.
+
+---
+
+# Final Principle
+
+Observation creates knowledge.
+
+Knowledge evolves through experience.
+
+Understanding enables Better Care.
