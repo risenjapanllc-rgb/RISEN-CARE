@@ -1,16 +1,18 @@
-# RISEN
+# RISEN CARE
 
-## An Observation Intelligence Platform
+## An Observation Intelligence Platform for Care & Welfare
 
-> **RISEN helps people understand what matters before it becomes a crisis.**
+> **Helping care professionals understand what matters before it becomes a crisis.**
 
 **From Observation to Understanding.**
 
 **Understanding enables Better Care.**
 
+Powered by **RISEN**
+
 ---
 
-## Philosophy
+# Philosophy
 
 > **Observe. Understand. Care.**
 
@@ -22,13 +24,22 @@ Together they enable better care.
 
 ---
 
-# What is RISEN?
+# What is RISEN CARE?
 
-RISEN is an Observation Intelligence Platform for care and welfare.
+RISEN CARE is an Observation Intelligence Platform for care and welfare.
 
-Rather than storing observations as records, RISEN transforms them into structured intelligence that helps professionals understand people more deeply.
+Rather than storing observations as records, RISEN CARE transforms them into structured intelligence that helps professionals understand people more deeply.
 
-RISEN converts observations into Knowledge, State, Episodes, Patterns, and Trajectories that support explainable AI and better care.
+RISEN CARE converts observations into:
+
+- Knowledge
+- Observation Intelligence
+- Episodes
+- Patterns
+- Trigger Candidates
+- Comparison Intelligence
+
+to support Explainable AI and better care.
 
 Observation is the beginning.
 
@@ -36,19 +47,23 @@ Understanding is the goal.
 
 ---
 
-# Mission
+# About RISEN
 
-**理解から、価値をつくる。**
+RISEN is the company and technology brand behind RISEN CARE.
 
-RISEN collects everyday observations, structures them into reusable knowledge, and helps organizations continuously build intelligence that supports better care.
+Mission
+
+> **理解から、価値をつくる。**
+
+RISEN develops Observation Intelligence technologies that transform everyday observations into reusable organizational knowledge.
 
 ---
 
 # Vision
 
-RISEN aims to become the Observation Intelligence Platform for care and welfare.
+RISEN CARE aims to become the Observation Intelligence Platform for care and welfare.
 
-Starting from Observation, RISEN enables:
+Starting from Observation, RISEN CARE enables:
 
 - Observation Intelligence
 - Knowledge Graph
@@ -62,7 +77,7 @@ Starting from Observation, RISEN enables:
 
 # Observation First Architecture
 
-RISEN adopts an **Observation First Architecture**.
+RISEN CARE adopts an **Observation First Architecture**.
 
 ```text
 Google Spreadsheet
@@ -79,11 +94,7 @@ Knowledge Graph
 
         │
         ▼
-State Engine
-
-        │
-        ▼
-Observation Intelligence Engine
+Observation Sequence
 
         │
         ▼
@@ -95,19 +106,25 @@ Pattern Discovery
 
         │
         ▼
-Behavior Trajectory Engine
+Trigger Analysis
 
         │
         ▼
-Reasoning Engine
+Observation Intelligence
 
         │
         ▼
-Preventive Care Engine
+Comparison Intelligence
 
         │
         ▼
-Knowledge Evolution Engine
+Trend Intelligence
+(Future)
+
+        │
+        ▼
+Recommendation
+(Future)
 
         │
         ▼
@@ -122,15 +139,15 @@ Observation is the only Source of Truth.
 
 Knowledge defines the meaning of observations.
 
-State summarizes the current condition.
-
 Episodes provide context.
 
 Patterns reveal recurring structures.
 
-Trajectories explain change over time.
+Trigger Analysis identifies observation-based hypotheses.
 
-AI reasons from structured Observation Intelligence.
+Observation Intelligence integrates explainable understanding.
+
+Comparison Intelligence explains change over time.
 
 Narrative Observation complements context and nuance.
 
@@ -138,7 +155,7 @@ Narrative Observation complements context and nuance.
 
 # Core Principles
 
-RISEN follows these principles.
+RISEN CARE follows these principles.
 
 - Observation is the Source of Truth.
 - Observation consists of Structured Observation and Narrative Observation.
@@ -156,9 +173,7 @@ RISEN follows these principles.
 
 ---
 
-# Observation Intelligence
-
-RISEN transforms observations into understanding.
+# Observation Intelligence Pipeline
 
 ```text
 Observation
@@ -167,10 +182,7 @@ Observation
 Knowledge
         │
         ▼
-State
-        │
-        ▼
-Sequence
+Observation Sequence
         │
         ▼
 Episode
@@ -182,7 +194,10 @@ Pattern
 Trigger Candidate
         │
         ▼
-AI Reasoning
+Observation Intelligence
+        │
+        ▼
+Comparison Intelligence
         │
         ▼
 Preventive Care
@@ -194,23 +209,17 @@ Understanding is.
 
 ---
 
-# Behavior Trajectory
+# Explainable AI
 
-RISEN is designed to understand change over time.
+Every AI-generated understanding is linked back to:
 
-Instead of asking
+- Observation
+- Knowledge
+- Episode
+- Pattern
+- Trigger Candidate
 
-> What happened?
-
-RISEN asks
-
-> What does this observation mean?
-
-and eventually
-
-> What tends to happen before meaningful change occurs?
-
-Understanding trajectories enables earlier support.
+RISEN CARE supports professionals by providing transparent reasoning rather than replacing human judgment.
 
 ---
 
@@ -218,7 +227,7 @@ Understanding trajectories enables earlier support.
 
 Knowledge is not static.
 
-RISEN continuously improves organizational knowledge through accumulated observations.
+RISEN CARE continuously improves organizational knowledge through accumulated observations.
 
 ```text
 Observation
@@ -234,10 +243,6 @@ Episode
 ↓
 
 Pattern
-
-↓
-
-Trajectory
 
 ↓
 
@@ -255,33 +260,14 @@ Organizations learn through experience.
 # Repository Structure
 
 ```text
-RISEN/
+risen-care/
 
 ├── README.md
 │
 ├── docs/
 │   ├── architecture/
-│   │   ├── 001-risen-observation-architecture-v2.md
-│   │   ├── 002-data-model.md
-│   │   ├── 003-knowledge-model.md
-│   │   ├── 004-review-model.md
-│   │   ├── 005-ai-reasoning.md
-│   │   ├── 006-knowledge-master-specification.md
-│   │   ├── 007-development-conventions.md
-│   │   ├── 009-roadmap.md
-│   │   ├── 011-state-engine-architecture.md
-│   │   ├── 012-behavior-intelligence-engine.md
-│   │   ├── 013-risen-system-architecture.md
-│   │   ├── 014-ai-philosophy.md
-│   │   ├── 015-observation-intelligence-engine.md
-│   │   ├── 016-reasoning-engine.md
-│   │   ├── 017-risen-design-principles.md
-│   │   ├── 018-behavior-trajectory.md
-│   │   ├── 019-preventive-care-engine.md
-│   │   └── 020-knowledge-evolution-engine.md
-│   │
-│   └── implementation/
-│       └── 010-implementation-guide.md
+│   ├── implementation/
+│   └── roadmap/
 │
 ├── sql/
 │   ├── schema/
@@ -300,9 +286,11 @@ RISEN/
 
 # Database
 
-RISEN uses **Supabase (PostgreSQL).**
+RISEN CARE uses **Supabase (PostgreSQL).**
 
 Core entities include:
+
+### Observation
 
 - users
 - events
@@ -310,17 +298,22 @@ Core entities include:
 - event_types
 - event_mapper
 
-Review
+### Review
 
 - review_types
 - event_type_review_types
 
-Knowledge
+### Knowledge
 
 - knowledge_categories
 - knowledge_nodes
 - knowledge_relations
 - event_type_knowledge
+
+### Intelligence
+
+- observation_reports
+- comparison_reports
 
 ---
 
@@ -339,11 +332,7 @@ Knowledge Graph
 
 ↓
 
-State
-
-↓
-
-Sequence
+Observation Sequence
 
 ↓
 
@@ -355,15 +344,15 @@ Pattern
 
 ↓
 
-Trajectory
+Trigger
 
 ↓
 
-Reasoning
+Observation Intelligence
 
 ↓
 
-Preventive Care
+Comparison Intelligence
 
 ↓
 
@@ -379,8 +368,8 @@ Dashboard
 - Supabase
 - PostgreSQL
 - GitHub
-- Knowledge Graph
 - OpenAI
+- Knowledge Graph
 - Observation Intelligence Engine
 
 ---
@@ -397,7 +386,7 @@ docs/implementation/010-implementation-guide.md
 
 # Development Policy
 
-RISEN development follows these priorities.
+RISEN CARE development follows these priorities.
 
 1. Preserve Observation.
 2. Build Knowledge before AI.
@@ -412,33 +401,29 @@ RISEN development follows these priorities.
 
 # Current Status
 
-✅ Observation Platform
+## Completed
 
-✅ Knowledge Platform
+- ✅ Observation Platform
+- ✅ Knowledge Platform
+- ✅ Knowledge Graph
+- ✅ Narrative Analysis
+- ✅ Observation Sequence
+- ✅ Episode Engine
+- ✅ Pattern Analysis
+- ✅ Trigger Analysis
+- ✅ Observation Intelligence
+- ✅ Comparison Intelligence
+- ✅ Explainable AI
 
-✅ Knowledge Graph
+## In Progress
 
-✅ State Engine
+- 🔄 Trend Intelligence
 
-✅ Observation Intelligence Engine
+## Planned
 
-✅ Episode Engine
-
-✅ Pattern Discovery
-
-✅ Behavior Trajectory Engine (Architecture)
-
-✅ Reasoning Engine
-
-✅ Preventive Care Engine (Architecture)
-
-✅ Knowledge Evolution Engine (Architecture)
-
-🔄 AI Reasoning
-
-⏳ Dashboard
-
-⏳ Administration
+- ⏳ Recommendation Engine
+- ⏳ Dashboard
+- ⏳ Administration
 
 ---
 
@@ -448,7 +433,7 @@ This project is currently under development.
 
 ---
 
-# RISEN
+# RISEN CARE
 
 **An Observation Intelligence Platform**
 
@@ -462,6 +447,4 @@ This project is currently under development.
 
 **Care.**
 
----
-
-**RISEN transforms observations into evolving knowledge and understanding, helping professionals recognize meaningful change before it becomes a crisis.**
+Powered by **RISEN**
