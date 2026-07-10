@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resident Dashboard",
+  "description": "RISEN CARE Dashboard Presentation Contract",
+  "type": "object",
+
+  "properties": {
+    "resident": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "user_code": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "user_code", "name"]
+    },
+
+    "understanding": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "updated_at": { "type": "string" }
+      }
+    },
+
+    "current_state": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" }
+      }
+    },
+
+    "episode": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+
+    "pattern_analysis": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" }
+      }
+    },
+
+    "trigger_analysis": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" }
+      }
+    },
+
+    "recent_observations": {
+      "type": "array"
+    }
+  },
+
+  "required": [
+    "resident",
+    "understanding",
+    "current_state",
+    "episode",
+    "pattern_analysis",
+    "trigger_analysis",
+    "recent_observations"
+  ]
+}
