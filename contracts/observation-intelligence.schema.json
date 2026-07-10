@@ -1,0 +1,28 @@
+{
+  "understanding": {
+    "headline": "基本的ケアが安定して継続しています",
+    "summary": "バイタル確認を中心に、排泄・水分・服薬・食事が継続して観察されています。",
+    "confidence": "medium"
+  },
+
+  "current_state": [
+    "バイタル確認が多い",
+    "排泄支援が一定時間帯に集中",
+    "水分摂取が継続"
+  ],
+
+  "patterns": [
+    "...",
+    "..."
+  ],
+
+  "trigger_analysis": [
+    "...",
+    "..."
+  ],
+
+  "care_opportunities": [
+    "...",
+    "..."
+  ]
+}
