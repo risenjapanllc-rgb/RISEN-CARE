@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "title": "RISEN CARE Current Understanding",
+
+  "type": "object",
+
+  "properties": {
+
+    "headline": {
+      "type": "string",
+      "description": "一目で伝わる利用者理解"
+    },
+
+    "summary": {
+      "type": "string",
+      "description": "2〜4行程度の要約"
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "report_id": {
+      "type": "string"
+    }
+
+  },
+
+  "required": [
+    "headline",
+    "summary",
+    "updated_at"
+  ]
+}
