@@ -1,0 +1,38 @@
+{
+  "resident": {
+    "id": "49bce56f-e123-4f9d-bdd1-99a77e7b9xxx",
+    "user_code": "1020",
+    "name": "木村 結衣"
+  },
+  "understanding": {
+    "summary": "最近は午前中の活動参加が安定しています。少人数での活動では会話と笑顔が増え、午後は疲労が見られやすい傾向があります。",
+    "updated_at": "2026-07-10T09:50:00+09:00"
+  },
+  "current_state": {
+    "label": "安定"
+  },
+  "episode": {
+    "title": "少人数での園芸活動",
+    "summary": "職員と利用者2名で活動した際、会話と笑顔が増えました。"
+  },
+  "pattern_analysis": {
+    "summary": "午前9時から11時の活動参加が多く、15時以降は休息を求める傾向があります。"
+  },
+  "trigger_analysis": {
+    "summary": "周囲の騒音と長時間の活動が、疲労や落ち着きにくさに関連している可能性があります。"
+  },
+  "recent_observations": [
+    {
+      "id": "event-001",
+      "observed_at": "2026-07-10T09:20:00+09:00",
+      "event_type": "食事",
+      "summary": "朝食後、職員の声かけに笑顔で応じました。"
+    },
+    {
+      "id": "event-002",
+      "observed_at": "2026-07-10T10:15:00+09:00",
+      "event_type": "活動",
+      "summary": "園芸活動に参加し、他の利用者と会話をされました。"
+    }
+  ]
+}
