@@ -1,6 +1,6 @@
 # 199 Roadmap
 
-Version: v1.0
+Version: v2.0
 
 ---
 
@@ -10,11 +10,13 @@ Version: v1.0
 
 RISEN CARE の進化計画を定義する。
 
-Observation を中心とした
+RISEN CARE は
 
-Care Intelligence Platform を
+Observation を起点として
 
-段階的に構築する。
+利用者理解・施設理解・組織理解を実現する
+
+Care Intelligence Platform へ進化する。
 
 ---
 
@@ -36,6 +38,56 @@ Care Intelligence Platform を目指す。
 
 ---
 
+# Evolution
+
+```text
+Observation
+
+↓
+
+Knowledge
+
+↓
+
+Observation Intelligence
+
+↓
+
+Resident Intelligence
+
+↓
+
+Search Intelligence
+
+↓
+
+Reasoning Intelligence
+
+↓
+
+Management Intelligence
+
+↓
+
+Facility Intelligence
+
+↓
+
+Executive Intelligence
+
+↓
+
+Care Intelligence Platform
+```
+
+RISEN CARE は
+
+Observation を中心に
+
+知能を積み上げていく。
+
+---
+
 # Phase 1
 
 ## Observation Foundation
@@ -44,19 +96,19 @@ Care Intelligence Platform を目指す。
 
 Observation を蓄積する。
 
-主な機能
+構築
 
 - Daily Records
 - Observation
-- Knowledge Graph
 - Event Classification
-- Observation Search
+- Event Mapper
+- Knowledge Graph
 
 成果
 
 Observation を
 
-唯一の事実として管理する。
+唯一の事実（Source of Truth）として管理する。
 
 ---
 
@@ -66,21 +118,21 @@ Observation を
 
 目的
 
-Observation を利用者理解へ変換する。
+Observation に意味を与える。
 
-主な機能
+構築
 
+- Knowledge
 - Episode
 - Pattern
 - Trigger
 - Observation Intelligence
-- Explainable AI
 
 成果
 
-Observation の意味を
+Observation が
 
-継続的に理解できる。
+利用者理解へ変換される。
 
 ---
 
@@ -92,18 +144,19 @@ Observation の意味を
 
 利用者理解を継続する。
 
-主な機能
+構築
 
 - Resident Memory
 - Dashboard
-- Resident AI Chat
+- AI Chat
 - Observation Timeline
+- Episode Timeline
 
 成果
 
 利用者理解を
 
-継続的に蓄積できる。
+継続的に更新できる。
 
 ---
 
@@ -115,47 +168,104 @@ Observation の意味を
 
 大量 Observation に対応する。
 
-主な機能
+構築
 
-- Search Engine
-- Observation Search
-- Knowledge Search
-- Episode Search
-- Pattern Search
-- Trigger Search
+- Question Analysis
+- Search Planner
+- Structured Search
+- Keyword Search
 - Semantic Search
+- Episode Expansion
+- Result Ranking
+- AI Context Builder
 
 成果
 
 AI は
 
-必要な情報だけを理解する。
+必要な Observation のみを理解する。
 
 ---
 
 # Phase 5
 
-## Management Intelligence
+## Reasoning Intelligence
 
 目的
 
-施設全体を理解する。
+Observation を
 
-主な機能
+利用者理解へ変換する。
 
-- Facility Dashboard
-- Trend Analysis
-- Risk Monitoring
-- Committee Support
-- Report Generation
+構築
+
+- Current Understanding
+- Recommendation
+- Explainable Reasoning
+- Context Generation
 
 成果
 
-管理者の意思決定を支援する。
+AI は
+
+Observation を整理し、
+
+専門職の判断を支援する。
 
 ---
 
 # Phase 6
+
+## Management Intelligence
+
+目的
+
+施設運営を支援する。
+
+構築
+
+- Management Dashboard
+- Risk Monitoring
+- Trend Analysis
+- Committee Intelligence
+- Report Generation
+
+成果
+
+管理者は
+
+施設全体の状況を理解し、
+
+迅速に意思決定できる。
+
+---
+
+# Phase 7
+
+## Facility Intelligence
+
+目的
+
+施設全体を継続的に学習する。
+
+構築
+
+- Organization Understanding
+- Knowledge Intelligence
+- Quality Intelligence
+- Operational Intelligence
+
+成果
+
+施設は
+
+Observation を蓄積することで
+
+継続的に成長する。
+
+---
+
+# Phase 8
 
 ## Executive Intelligence
 
@@ -163,23 +273,23 @@ AI は
 
 経営判断を支援する。
 
-主な機能
+構築
 
 - KPI
 - Quality Indicators
-- Facility Comparison
-- Cost Analysis
+- Multi Facility
+- Benchmark
 - Executive Dashboard
 
 成果
 
-経営状況を
+経営層は
 
-リアルタイムで把握できる。
+施設全体をリアルタイムに把握できる。
 
 ---
 
-# Phase 7
+# Phase 9
 
 ## Care Intelligence Platform
 
@@ -216,14 +326,22 @@ RISEN CARE は
 
 施設単位から
 
-地域全体へ拡張する。
+社会全体へ知能を拡張する。
 
-```
+```text
 Resident Intelligence
 
 ↓
 
+Management Intelligence
+
+↓
+
 Facility Intelligence
+
+↓
+
+Executive Intelligence
 
 ↓
 
@@ -238,15 +356,19 @@ Care Intelligence Platform
 
 # Design Principles
 
-すべての進化は
+RISEN CARE は
 
-Observation を中心に行う。
+Observation を変更しない。
 
-Observation を変更せず、
+Observation を基盤とし、
 
-上位レイヤーを拡張することで
+上位レイヤーを積み重ねることで
 
-Platform を成長させる。
+Platform を進化させる。
+
+すべての Intelligence は
+
+Observation を根拠とする。
 
 ---
 
@@ -260,8 +382,8 @@ RISEN CARE は
 - 利用者理解を継続的に深める
 - Explainable AI を実現する
 - 管理者の意思決定を支援する
-- 経営者が施設全体を把握できる
-- Observation を知能へ変える
+- 経営者が施設全体を理解できる
+- Observation を組織の知能へ変える
 
 ---
 
@@ -269,7 +391,7 @@ RISEN CARE は
 
 ## v1
 
-- Observation
+- Observation Foundation
 - Knowledge Graph
 - Observation Intelligence
 - Resident Memory
@@ -281,23 +403,24 @@ RISEN CARE は
 ## v2
 
 - Search Engine
+- Search Intelligence
+- Reasoning Intelligence
 - Management Intelligence
-- Facility Intelligence
-- Analytics
 
 ---
 
 ## v3
 
+- Facility Intelligence
 - Executive Intelligence
-- Multi Facility
 - Semantic Search
-- AI Prediction
+- Predictive Analytics
 
 ---
 
 ## v4
 
+- Multi Facility
 - Regional Intelligence
 - Care Plan Integration
 - Medical Integration
@@ -311,8 +434,20 @@ RISEN CARE の最終目標は
 
 Observation を
 
-人を理解する知能へ変え、
+利用者理解へ変え、
 
-すべてのケアを
+利用者理解を
 
-より良い意思決定へつなげることである。
+施設の知能へ変え、
+
+施設の知能を
+
+より良いケアと意思決定へつなげることである。
+
+AI は答えを出す存在ではない。
+
+Observation を理解へ変え、
+
+人がより良い支援を行うための
+
+Care Intelligence Platform である。
