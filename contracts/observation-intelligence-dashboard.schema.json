@@ -1,7 +1,127 @@
 {
-  "status": "",
-  "summary": "",
-  "actions": [],
-  "evidence": [],
-  "confidence": ""
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risen-care.local/contracts/observation-intelligence-dashboard.schema.json",
+  "title": "RISEN CARE Observation Intelligence Dashboard",
+  "description": "介護職向けダッシュボードに表示するObservation Intelligenceの構造化出力",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "最初に伝える現在の状態。例：大きな異常は観察されていません"
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "stable",
+            "attention",
+            "alert",
+            "unknown"
+          ],
+          "description": "画面表示用の状態レベル"
+        }
+      },
+      "required": [
+        "label",
+        "level"
+      ]
+    },
+
+    "summary": {
+      "type": "string",
+      "description": "現在の利用者理解を2〜4文で要約した文章",
+      "minLength": 1
+    },
+
+    "actions": {
+      "type": "array",
+      "description": "現場職員が次に確認・実行できる具体的なアクション",
+      "minItems": 0,
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+
+    "evidence": {
+      "type": "array",
+      "description": "状態や提案の根拠となるObservation、Episode、Patternなど",
+      "minItems": 0,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "observation",
+              "episode",
+              "pattern",
+              "trigger",
+              "knowledge",
+              "comparison",
+              "report"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "label",
+          "detail"
+        ]
+      }
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "description": "AI出力の確信度"
+    },
+
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "この構造化出力を生成した日時"
+    },
+
+    "report_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "対応するObservation Intelligence ReportのID"
+    }
+  },
+
+  "required": [
+    "status",
+    "summary",
+    "actions",
+    "evidence",
+    "confidence",
+    "generated_at"
+  ]
 }
