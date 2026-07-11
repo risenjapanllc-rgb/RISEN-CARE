@@ -1,6 +1,6 @@
 # 198 Facility Intelligence
 
-Version: v1.0
+Version: v2.0
 
 ---
 
@@ -8,13 +8,13 @@ Version: v1.0
 
 Facility Intelligence は
 
-施設全体の Observation を統合し、
+施設全体の Observation を継続的に学習し、
 
-施設運営全体を支援する Intelligence Engine である。
+施設という組織の品質向上と改善を支援する Intelligence Engine である。
 
 利用者単位ではなく、
 
-施設という一つの組織を理解する。
+施設全体を一つの知能として理解することを目的とする。
 
 ---
 
@@ -22,22 +22,26 @@ Facility Intelligence は
 
 Facility Intelligence は
 
-Observation Intelligence と
+Observation Intelligence、
+
+Resident Intelligence、
 
 Management Intelligence を統合し、
 
-施設全体の状況を継続的に把握する。
+施設全体の知識・品質・運営状況を継続的に学習する。
 
-施設運営に必要な
+目的は
 
-情報・傾向・変化を提供する。
+施設運営だけではなく、
+
+組織そのものを成長させることである。
 
 ---
 
 # Architecture
 
-```
-Residents
+```text
+Observation
 
 ↓
 
@@ -45,7 +49,7 @@ Observation Intelligence
 
 ↓
 
-Resident Memory
+Resident Intelligence
 
 ↓
 
@@ -62,46 +66,71 @@ Executive Dashboard
 
 ---
 
-# Main Functions
+# Facility Components
 
 Facility Intelligence は
 
-以下の機能を提供する。
+以下を提供する。
 
 - Facility Status
-- Facility Trends
+- Organization Understanding
+- Trend Intelligence
 - Operational Intelligence
 - Quality Intelligence
+- Knowledge Intelligence
 - Executive Support
 
 ---
 
 # Facility Status
 
-施設全体の現在の状態を把握する。
+施設全体の現在の状態を表示する。
 
 例
 
+- 利用者数
 - 注意利用者数
-- Alert利用者数
+- 状態変化利用者数
 - Observation件数
 - AI更新状況
-- 夜間対応状況
 
 ---
 
-# Facility Trends
+# Organization Understanding
 
-施設全体の変化を分析する。
+施設全体を
+
+文章で要約する。
+
+例
+
+- 転倒関連Observationが増加している
+- 夜間支援負荷が高まっている
+- 食事状況は安定している
+- 行動変化Observationが増えている
+
+数値だけではなく、
+
+施設全体を理解できることを目指す。
+
+---
+
+# Trend Intelligence
+
+施設全体の長期変化を分析する。
 
 例
 
 - 転倒推移
 - 発熱推移
 - 食事量推移
-- 排泄状況
-- 水分摂取状況
+- 水分摂取傾向
+- 排泄傾向
 - 睡眠傾向
+
+Trend は
+
+Observation の積み重ねから生成される。
 
 ---
 
@@ -112,10 +141,9 @@ Facility Intelligence は
 例
 
 - 夜勤負荷
-- 業務集中時間
-- ケア負荷
-- 人員配置
-- 支援優先度
+- ケア集中時間帯
+- 人員配置傾向
+- 支援優先順位
 
 ---
 
@@ -126,76 +154,124 @@ Facility Intelligence は
 例
 
 - Observation実施率
+- Observation品質
 - 記録品質
-- ケア品質
-- AI活用状況
+- AI利用率
 - 継続観察率
+- Episode生成率
+
+品質改善を継続的に支援する。
+
+---
+
+# Knowledge Intelligence
+
+施設内で蓄積された
+
+Knowledge を分析する。
+
+例
+
+- 新しいPattern
+- よく発生するEpisode
+- Observation不足領域
+- Knowledge更新候補
+
+Facility Intelligence は
+
+Knowledge Evolution を支援する。
 
 ---
 
 # Executive Support
 
-経営判断を支援する。
+経営層向けの情報を生成する。
 
 例
 
 - KPI
 - 品質指標
-- 事故分析
 - 加算状況
+- 事故分析
 - 改善提案
 
 ---
 
 # AI Support
 
-自然言語で施設全体を検索できる。
+自然言語で
+
+施設全体について質問できる。
 
 例
 
-- 今週の重点事項は？
+- 最近施設全体で何が起きている？
 - 転倒は増えている？
-- 夜間負荷は？
-- 食事量低下は？
-- 今一番注意が必要なことは？
+- Observationが不足している領域は？
+- 品質改善が必要な分野は？
+- 今後重点的に改善すべきことは？
 
 ---
 
-# Design Principles
+# Explainability
 
-## Facility-wide Intelligence
-
-施設全体を
-
-一つの Observation として理解する。
-
----
-
-## Explainable
+Facility Intelligence が生成する
 
 すべての分析は
 
 Observation を根拠とする。
 
----
+分析結果から
 
-## Continuous Monitoring
-
-施設の状態を
-
-継続的に更新する。
+Observation まで追跡できる。
 
 ---
 
-## Decision Support
+# Design Principles
+
+## Observation First
+
+施設理解は
+
+Observation を基盤とする。
+
+---
+
+## Continuous Learning
+
+施設は
+
+Observation を蓄積することで
+
+継続的に学習する。
+
+---
+
+## Knowledge Evolution
+
+Observation は
+
+Knowledge へ変わり、
+
+Knowledge は
+
+施設全体の知能へ成長する。
+
+---
+
+## Explainable
+
+分析結果は
+
+Observation を根拠とする。
+
+---
+
+## Organization Intelligence
 
 Facility Intelligence は
 
-施設運営を支援する。
-
-最終判断は
-
-管理者・経営者が行う。
+施設を一つの知能として理解する。
 
 ---
 
@@ -208,9 +284,10 @@ Facility Intelligence は
 - Multi Facility Intelligence
 - Regional Intelligence
 - National Benchmark
-- AI Prediction
-- Simulation
+- Executive Intelligence
+- Predictive Analytics
 - Resource Optimization
+- Simulation Engine
 
 ---
 
@@ -218,5 +295,9 @@ Facility Intelligence は
 
 - 190 Care Intelligence Platform
 - 191 Platform Architecture
+- 193 Resident Memory
+- 194 Search Engine
+- 195 AI Chat
+- 196 Dashboard
 - 197 Management Intelligence
 - 199 Roadmap
