@@ -1,6 +1,6 @@
 # 196 Dashboard
 
-Version: v1.0
+Version: v2.0
 
 ---
 
@@ -8,15 +8,19 @@ Version: v1.0
 
 Dashboard は
 
-利用者の現在の状態を
+利用者の現在の状態を短時間で理解するための画面である。
 
-短時間で理解するための画面である。
+Dashboard は
 
-職員が
+Observation Intelligence の結果を可視化し、
 
-「今、何を確認すべきか」
+専門職が
 
-を最初に把握できることを目的とする。
+「今、この利用者をどう理解するか」
+
+「次に何を確認するか」
+
+をすぐに把握できることを目的とする。
 
 ---
 
@@ -24,43 +28,78 @@ Dashboard は
 
 Dashboard は
 
-Observation Intelligence の結果を表示する。
+Intelligence Engine が生成した利用者理解を表示する。
 
 Dashboard 自体は
 
-分析や推論を行わない。
+検索・分析・推論を行わない。
+
+AI は一つ。
+
+Dashboard はその結果を表示する。
 
 ---
 
 # Architecture
 
-```
+```text
+Observation
+
+↓
+
+Knowledge
+
+↓
+
+Observation Intelligence
+
+↓
+
 Resident Memory
 
 ↓
 
-Dashboard API
+Search Engine
 
 ↓
 
-Dashboard UI
+Reasoning Engine
+
+↓
+
+Dashboard
 ```
 
 ---
 
-# Display Components
+# Dashboard Components
 
 Dashboard は
 
 以下の情報を表示する。
 
+- Current Understanding
 - Current Status
-- Resident Summary
+- Resident Memory
 - Watch Points
-- Important Patterns
 - Recent Changes
-- Recent Observations
+- Important Patterns
+- Observation Timeline
+- Episode Timeline
+- Recommendations
 - AI Chat
+
+---
+
+# Current Understanding
+
+現在の利用者理解を
+
+2〜4文で表示する。
+
+Dashboard を開いた瞬間に
+
+利用者像が把握できることを目指す。
 
 ---
 
@@ -79,15 +118,20 @@ Dashboard の最上部に表示する。
 
 ---
 
-# Resident Summary
+# Resident Memory
 
-現在の利用者理解を
+Resident Memory の最新状態を表示する。
 
-2〜4文で表示する。
+例
 
-利用者を理解するための
+- 現在の状態
+- 支援時の配慮
+- 最近の変化
+- 利用者らしさ
 
-最初の説明となる。
+Dashboard は
+
+Resident Memory の入口となる。
 
 ---
 
@@ -102,17 +146,9 @@ Dashboard の最上部に表示する。
 - 夜間覚醒
 - 排泄後の表情
 
----
+Observation を増やすための
 
-# Important Patterns
-
-継続して観察されている Pattern を表示する。
-
-例
-
-- 夜間覚醒が継続
-- 食事摂取は安定
-- 排泄リズムは一定
+行動指針となる。
 
 ---
 
@@ -127,11 +163,29 @@ Dashboard の最上部に表示する。
 - 食欲低下
 - 行動変化
 
+利用者理解の変化を最初に伝える。
+
 ---
 
-# Recent Observations
+# Important Patterns
 
-最新の日常記録を
+継続して観察されている Pattern を表示する。
+
+例
+
+- 夜間覚醒が継続
+- 食事摂取は安定
+- 排泄リズムは一定
+
+Pattern は
+
+Observation の積み重ねから生成される。
+
+---
+
+# Observation Timeline
+
+最新の Observation を
 
 時系列で表示する。
 
@@ -144,6 +198,65 @@ Dashboard の最上部に表示する。
 - 睡眠
 - 行動
 
+Observation は
+
+利用者理解の根拠となる。
+
+---
+
+# Episode Timeline
+
+Observation を
+
+Episode 単位で表示する。
+
+例
+
+```text
+食事
+
+↓
+
+興奮
+
+↓
+
+倒れ込み
+
+↓
+
+居室誘導
+
+↓
+
+バイタル確認
+```
+
+Episode は
+
+単独 Observation より
+
+理解しやすい単位である。
+
+---
+
+# Recommendations
+
+Observation Intelligence が
+
+次に確認するとよい Observation を表示する。
+
+例
+
+- 痛みの有無
+- 歩行状態
+- 水分摂取量
+- 表情の変化
+
+Recommendation は
+
+専門職の判断を支援する。
+
 ---
 
 # AI Chat
@@ -152,7 +265,7 @@ Dashboard から
 
 AI Chat を起動できる。
 
-Resident Memory を利用し、
+Dashboard の利用者理解を引き継ぎ、
 
 継続した対話を行う。
 
@@ -162,19 +275,35 @@ Resident Memory を利用し、
 
 Dashboard は
 
-Observation Intelligence 実行後に更新される。
+Observation Intelligence 更新後に同期される。
 
-Resident Memory と同期する。
+Resident Memory と常に一致する。
+
+---
+
+# Explainability
+
+Dashboard に表示される情報は
+
+Observation を根拠とする。
+
+利用者理解から
+
+Observation まで追跡できる。
 
 ---
 
 # Design Principles
 
+## Understanding First
+
+利用者理解を最初に表示する。
+
+---
+
 ## Current First
 
-現在の状態を
-
-最初に伝える。
+現在最も重要な状態を最優先で表示する。
 
 ---
 
@@ -188,7 +317,7 @@ Resident Memory と同期する。
 
 ## Explainable
 
-表示内容は
+すべての表示は
 
 Observation を根拠とする。
 
@@ -207,16 +336,20 @@ Observation を根拠とする。
 以下を追加する。
 
 - Timeline View
-- Trend Graph
+- Trend Analysis
 - Risk Trend
 - Similar Episodes
+- Comparison View
 - Family Summary
+- Mobile Dashboard
 
 ---
 
 # Related Documents
 
 - 190 Care Intelligence Platform
+- 191 Platform Architecture
+- 192 Observation Pipeline
 - 193 Resident Memory
 - 194 Search Engine
 - 195 AI Chat
