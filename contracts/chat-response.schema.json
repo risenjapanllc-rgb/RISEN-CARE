@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "$id": "https://risen-care.local/contracts/chat-response.schema.json",
+
+  "title": "RISEN CARE Chat Response",
+
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "answer": {
+      "type": "string"
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+
+    "timeline": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "object",
+
+        "properties": {
+
+          "date": {
+            "type": "string"
+          },
+
+          "title": {
+            "type": "string"
+          },
+
+          "summary": {
+            "type": "string"
+          }
+
+        },
+
+        "required": [
+          "date",
+          "title",
+          "summary"
+        ]
+      }
+    },
+
+    "evidence": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "object",
+
+        "properties": {
+
+          "type": {
+            "type": "string"
+          },
+
+          "label": {
+            "type": "string"
+          },
+
+          "detail": {
+            "type": "string"
+          },
+
+          "source_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+
+        },
+
+        "required": [
+          "type",
+          "label",
+          "detail"
+        ]
+      }
+    }
+
+  },
+
+  "required": [
+    "answer",
+    "confidence",
+    "timeline",
+    "evidence"
+  ]
+}
