@@ -399,6 +399,116 @@ RISEN CARE development follows these priorities.
 
 ---
 
+# Architecture
+
+The core architecture of RISEN CARE is documented in the following design documents.
+
+```text
+docs/
+└── architecture/
+    └── 190-care-intelligence-platform/
+        ├── README.md
+        ├── 191-platform-architecture.md
+        ├── 192-observation-pipeline.md
+        ├── 193-resident-memory.md
+        ├── 194-search-engine.md
+        ├── 195-ai-chat.md
+        ├── 196-dashboard.md
+        ├── 197-management-intelligence.md
+        ├── 198-facility-intelligence.md
+        └── 199-roadmap.md
+```
+
+These documents define the complete Care Intelligence Platform architecture, including:
+
+- Observation Intelligence
+- Resident Memory
+- Search Engine
+- AI Chat
+- Dashboard
+- Management Intelligence
+- Facility Intelligence
+- Future Platform Evolution
+
+---
+
+# Current Architecture
+
+```text
+Observation
+
+↓
+
+Knowledge Graph
+
+↓
+
+Episode
+
+↓
+
+Pattern
+
+↓
+
+Trigger
+
+↓
+
+Observation Intelligence
+
+↓
+
+Resident Memory
+
+↓
+
+Search Engine
+
+↓
+
+AI
+
+↓
+
+Better Care
+```
+
+---
+
+# Current Status
+
+## Completed
+
+- ✅ Observation Platform
+- ✅ Knowledge Platform
+- ✅ Knowledge Graph
+- ✅ Narrative Analysis
+- ✅ Observation Sequence
+- ✅ Episode Engine
+- ✅ Pattern Analysis
+- ✅ Trigger Analysis
+- ✅ Observation Intelligence
+- ✅ Resident Memory
+- ✅ Observation Intelligence Dashboard
+- ✅ Resident AI Chat
+
+## In Progress
+
+- 🚧 Search Engine
+- 🚧 Management Intelligence
+- 🚧 Facility Intelligence
+
+## Planned
+
+- 📋 Executive Intelligence
+- 📋 Semantic Search
+- 📋 Vector Search
+- 📋 Care Plan Intelligence
+- 📋 Regional Intelligence
+
+---
+
 # Current Status
 
 ## Completed
