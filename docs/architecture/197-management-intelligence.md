@@ -1,6 +1,6 @@
 # 197 Management Intelligence
 
-Version: v1.0
+Version: v2.0
 
 ---
 
@@ -8,13 +8,15 @@ Version: v1.0
 
 Management Intelligence は
 
-施設全体の Observation を統合し、
+施設全体の利用者理解を統合し、
 
 管理者の意思決定を支援する。
 
 利用者単位では見えない
 
-施設全体の傾向や変化を可視化する。
+施設全体の状態・変化・傾向を可視化し、
+
+管理業務を支援することを目的とする。
 
 ---
 
@@ -22,20 +24,24 @@ Management Intelligence は
 
 Management Intelligence は
 
-Observation Intelligence の結果を
+Resident Intelligence を集約し、
 
-施設全体で集約・分析する。
+施設全体の Intelligence を生成する。
+
+分析そのものではなく、
 
 管理者が
 
-迅速かつ根拠のある判断を行えることを目的とする。
+「今、施設全体をどう理解するか」
+
+を支援する。
 
 ---
 
 # Architecture
 
-```
-All Residents
+```text
+Observation
 
 ↓
 
@@ -44,6 +50,10 @@ Observation Intelligence
 ↓
 
 Resident Memory
+
+↓
+
+Resident Intelligence
 
 ↓
 
@@ -67,38 +77,57 @@ Management Dashboard
 
 ---
 
-# Main Functions
+# Management Components
 
 Management Intelligence は
 
 以下を提供する。
 
 - Facility Overview
+- Current Situation
 - Risk Monitoring
 - Trend Analysis
 - Resource Planning
-- Committee Support
+- Committee Intelligence
 - Report Generation
+- AI Chat
 
 ---
 
 # Facility Overview
 
-施設全体の状態を表示する。
+施設全体の現在の状態を表示する。
 
 例
 
 - 利用者数
-- 注意利用者数
-- Alert利用者数
+- 要注意利用者数
+- 状態変化利用者数
 - Observation件数
 - AI更新状況
 
 ---
 
-# Risk Monitoring
+# Current Situation
 
-施設内で
+施設全体の利用者理解を要約する。
+
+例
+
+- 転倒関連Observationが増加
+- 夜間覚醒利用者が増加
+- 発熱利用者は減少
+- 食事状況は安定
+
+管理者は
+
+数値ではなく
+
+現在の施設状況を理解できる。
+
+---
+
+# Risk Monitoring
 
 重点的に確認すべき利用者を表示する。
 
@@ -107,44 +136,50 @@ Management Intelligence は
 - 転倒リスク
 - 発熱
 - 夜間覚醒
-- 食事量低下
+- 食欲低下
 - 水分不足
 - 行動変化
+
+Observation を根拠とする。
 
 ---
 
 # Trend Analysis
 
-施設全体の傾向を分析する。
+施設全体の傾向を表示する。
 
 例
 
 - 転倒件数推移
 - 発熱件数推移
 - 夜間コール推移
-- 排泄パターン
+- 排泄傾向
 - 水分摂取傾向
+
+Trend は
+
+Observation の積み重ねから生成される。
 
 ---
 
 # Resource Planning
 
-支援状況を把握する。
+施設運営を支援する。
 
 例
 
 - 夜勤負荷
 - ケア集中時間帯
-- 業務量
+- 業務負荷
 - 支援対象人数
 
 ---
 
-# Committee Support
+# Committee Intelligence
 
-委員会資料作成を支援する。
+委員会活動を支援する。
 
-例
+対象
 
 - 事故防止委員会
 - 身体拘束適正化委員会
@@ -152,37 +187,55 @@ Management Intelligence は
 - 褥瘡対策委員会
 - 安全対策委員会
 
+Observation を根拠として
+
+委員会資料を生成する。
+
 ---
 
 # Report Generation
 
-Observation を基に
+Observation Intelligence を利用し、
 
 管理資料を生成する。
 
 例
 
 - 月次レポート
-- 事故分析
 - KPI
 - 品質指標
+- 事故分析
 - 加算資料
 
 ---
 
-# AI Support
+# AI Chat
 
 管理者は
 
-自然言語で質問できる。
+自然言語で施設全体について質問できる。
 
 例
 
-- 最近転倒が増えている？
-- 夜間負担が大きい利用者は？
-- 発熱が多い居室は？
-- 食事量が低下している利用者は？
+- 最近転倒は増えている？
+- 夜勤負荷が高い時間帯は？
+- 発熱利用者は何人？
 - 今週の重点確認事項は？
+- 夜間覚醒利用者を教えて。
+
+---
+
+# Explainability
+
+すべての分析は
+
+Observation を根拠とする。
+
+管理者は
+
+分析結果から
+
+Observation まで追跡できる。
 
 ---
 
@@ -190,9 +243,17 @@ Observation を基に
 
 ## Observation First
 
-分析は
+すべての分析は
 
-Observation を根拠とする。
+Observation を基盤とする。
+
+---
+
+## Understanding First
+
+数値だけではなく、
+
+施設全体の理解を支援する。
 
 ---
 
@@ -200,15 +261,7 @@ Observation を根拠とする。
 
 分析結果は
 
-根拠となる Observation を示す。
-
----
-
-## Facility-wide View
-
-利用者単位ではなく
-
-施設全体を対象とする。
+Observation を根拠とする。
 
 ---
 
@@ -224,18 +277,27 @@ Management Intelligence は
 
 ---
 
+## Scalable
+
+利用者数が増えても
+
+同じ Intelligence Engine を利用する。
+
+---
+
 # Future
 
 将来的には
 
 以下へ拡張する。
 
-- 多施設比較
-- 品質ベンチマーク
-- 人員配置最適化
-- AIアラート
-- 経営分析
-- 行政提出資料
+- Multi-facility Intelligence
+- Benchmark Analysis
+- Quality Intelligence
+- Staffing Intelligence
+- Executive Intelligence
+- AI Alert
+- Predictive Management
 
 ---
 
