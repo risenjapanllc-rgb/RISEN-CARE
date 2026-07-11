@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risen-care.local/contracts/chat-request.schema.json",
+  "title": "RISEN CARE Chat Request",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "user_id": {
+      "type": "string",
+      "description": "利用者ID"
+    },
+
+    "question": {
+      "type": "string",
+      "description": "自然文の質問"
+    },
+
+    "search_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "observation",
+          "knowledge",
+          "episode",
+          "pattern",
+          "review",
+          "daily_record",
+          "medical",
+          "care_plan",
+          "family"
+        ]
+      }
+    }
+
+  },
+
+  "required": [
+    "user_id",
+    "question"
+  ]
+}
