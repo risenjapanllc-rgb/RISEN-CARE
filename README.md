@@ -1,5 +1,13 @@
 # RISEN CARE
 
+RISEN CARE
+
+Observation is Fact.
+
+Context gives Meaning.
+
+Intelligence supports Understanding.
+
 ## An Observation Intelligence Platform for Care & Welfare
 
 > **Helping care professionals understand what matters before it becomes a crisis.**
