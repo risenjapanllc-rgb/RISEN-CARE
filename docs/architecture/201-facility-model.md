@@ -18,6 +18,17 @@ RISEN CARE が
 
 同じ Intelligence Platform を利用できることを目的とする。
 
+
+Facility は、
+
+RISEN CARE 導入時に登録される
+
+施設マスタである。
+
+利用者・Observation・環境情報は、
+
+Facility を起点として関連付けられる。
+
 ---
 
 # Background
@@ -900,3 +911,4 @@ Observation と分けて説明する。
 - `199-roadmap.md`
 - `202-weather-service.md`
 - `203-observation-context.md`
+
