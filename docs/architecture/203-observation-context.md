@@ -654,3 +654,29 @@ RISEN CARE は
 - 197 Management Intelligence
 - 198 Facility Intelligence
 - 199 Roadmap
+
+---
+
+# Philosophy
+
+Observation は
+
+事実を記録する。
+
+Context は
+
+その事実に意味を与える。
+
+Intelligence は
+
+Observation と Context を統合し、
+
+利用者理解を支援する。
+
+Observation を変更せず、
+
+Context を積み重ねることで、
+
+RISEN CARE は
+
+継続的に Intelligence を進化させる。
