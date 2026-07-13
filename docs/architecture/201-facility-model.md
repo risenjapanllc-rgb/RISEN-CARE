@@ -29,6 +29,12 @@ RISEN CARE 導入時に登録される
 
 Facility を起点として関連付けられる。
 
+Facility は
+
+Observation Context の基盤となる
+
+最初の Context Entity である。
+
 ---
 
 # Background
@@ -152,13 +158,39 @@ Reasoning Engine
 
 # Core Principle
 
+Observation は
+
+唯一の事実（Fact）である。
+
 Facility は
 
-Observation そのものではない。
+Observation が発生した環境（Context）を定義する。
+
+Observation を変更しない。
 
 Facility は
 
-Observation が発生した環境を定義する Context である。
+Observation に意味を与える Context として機能する。
+
+```text
+Observation
+
++
+
+Facility Context
+
+↓
+
+Observation Context
+
+↓
+
+Reasoning
+
+↓
+
+Resident Understanding
+```
 
 ---
 
@@ -557,6 +589,10 @@ Facility
 
 ↓
 
+Facility Resolver
+
+↓
+
 Latitude / Longitude
 
 ↓
@@ -611,6 +647,12 @@ Facility が取得できない場合でも、
 ---
 
 # Observation Context
+
+Facility Context は
+
+Observation Context を構成する
+
+最初の環境情報である。
 
 Facility を基盤として、
 
@@ -850,6 +892,9 @@ users.facility_id
 - Infection Context
 - Multi-facility Comparison
 - Facility Benchmark
+- Weather Context
+- Observation Context
+- Organization Model
 
 ---
 
@@ -896,6 +941,32 @@ Observation と分けて説明する。
 施設名・所在地・緯度経度だけで開始する。
 
 必要に応じて拡張する。
+
+---
+
+# Philosophy
+
+Observation は
+
+事実を記録する。
+
+Facility は
+
+その事実が生まれた環境を定義する。
+
+AI は
+
+Observation と Context を統合し、
+
+利用者理解を支援する。
+
+Observation を変えず、
+
+Context を積み重ねることで、
+
+RISEN CARE は
+
+継続的に Intelligence を進化させる。
 
 ---
 
