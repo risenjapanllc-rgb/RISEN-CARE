@@ -406,3 +406,27 @@ AIは答えを押し付けるものではない。
 人がより良い支援を行うための
 
 知能基盤である。
+
+---
+
+# Philosophy
+
+Observation is Fact.
+
+Context gives Meaning.
+
+Intelligence supports Understanding.
+
+Observation は
+
+利用者に起きた事実である。
+
+Context は
+
+Observation に意味を与える。
+
+Intelligence は
+
+Observation と Context を統合し、
+
+利用者理解を支援する。
