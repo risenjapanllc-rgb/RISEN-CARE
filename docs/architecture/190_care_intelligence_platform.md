@@ -409,17 +409,17 @@ AIは答えを押し付けるものではない。
 
 ---
 
-# Philosophy
+# RISEN CARE Philosophy
 
-Observation is Fact.
+RISEN CARE は
 
-Context gives Meaning.
+Observation を中心とした
 
-Intelligence supports Understanding.
+Care Intelligence Platform である。
 
 Observation は
 
-利用者に起きた事実である。
+利用者に起きた事実を記録する。
 
 Context は
 
@@ -431,10 +431,23 @@ Observation と Context を統合し、
 
 利用者理解を支援する。
 
-# RISEN CARE Philosophy
+RISEN CARE は
+
+Observation を変更しない。
+
+Observation を中心に
+
+Context を積み重ねることで、
+
+継続的に Intelligence を進化させる。
+
+---
+
+## Design Statement
 
 Observation is Fact.
 
 Context gives Meaning.
 
+Intelligence supports Understanding.
 Intelligence supports Understanding.
