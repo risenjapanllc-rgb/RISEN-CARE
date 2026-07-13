@@ -430,3 +430,11 @@ Intelligence は
 Observation と Context を統合し、
 
 利用者理解を支援する。
+
+# RISEN CARE Philosophy
+
+Observation is Fact.
+
+Context gives Meaning.
+
+Intelligence supports Understanding.
