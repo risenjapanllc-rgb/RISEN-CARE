@@ -53,3 +53,9 @@ Care Summary
 
 ## v5
 Trend Analysis
+
+---
+
+RISEN CARE does not send raw care records directly to Generative AI.
+
+RISEN CARE first transforms care records into structured knowledge before AI reasoning.
