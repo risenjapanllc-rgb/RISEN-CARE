@@ -201,9 +201,10 @@ The system shall never hide uncertainty from the operator.
 
 ---
 
----
-
 # Fundamental Principle
+
+The following principle governs every synchronization process,
+database update, and future system enhancement in RISEN CARE.
 
 > **If correctness cannot be guaranteed,
 > the system shall stop rather than risk corrupting resident data.**
