@@ -1,4 +1,16 @@
-# 204 Data Integrity
+# ADR-204: Data Integrity
+
+**Status:** Accepted
+
+**Date:** 2026-07-17
+
+**Decision**
+
+RISEN CARE adopts a "Data Integrity First" architecture.
+
+Every synchronization process, database update, AI-assisted workflow,
+and future system enhancement shall comply with the principles defined
+in this document.
 
 ## Purpose
 
