@@ -4,42 +4,11 @@
 
 **Date:** 2026-07-17
 
-204-data-integrity.md
-
-1. Purpose
-
-2. Design Principles
-
-3. Validation Before Update
-
-4. Fail Safe
-
-5. Audit Trail
-
-6. Logging
-
-7. Future Enhancements
-
-8. Fundamental Principle
-
-# Development Checklist
-
-Every new synchronization process or database update should satisfy the following requirements before implementation.
-
-- [ ] source_record_id is the only synchronization key.
-- [ ] Synchronization never depends on spreadsheet row order.
-- [ ] Validation is performed before updating records.
-- [ ] Ambiguous data causes the synchronization to stop.
-- [ ] No data is inferred or guessed.
-- [ ] Synchronization is fully traceable through logs.
-- [ ] The implementation complies with ADR-204.
-- [ ] Resident records cannot be corrupted under any circumstance.
-
 ---
 
-**Decision**
+## Decision
 
-RISEN CARE adopts a "Data Integrity First" architecture.
+RISEN CARE adopts a **Data Integrity First** architecture.
 
 Every synchronization process, database update, AI-assisted workflow,
 and future system enhancement shall comply with the principles defined
@@ -47,7 +16,49 @@ in this document.
 
 ---
 
-## Purpose
+# Development Checklist
+
+Every new synchronization process, database update, or AI-assisted data operation shall satisfy the following requirements before implementation.
+
+## Synchronization
+
+- [ ] `source_record_id` is the only synchronization key.
+- [ ] Synchronization never depends on spreadsheet row numbers.
+- [ ] Synchronization never depends on row order.
+- [ ] Every update targets exactly one record.
+
+## Validation
+
+- [ ] `source_record_id` exists.
+- [ ] `source_record_id` is unique in the spreadsheet.
+- [ ] `source_record_id` uniquely exists in Supabase.
+- [ ] Required fields are present.
+- [ ] Resident identity has been verified when applicable.
+
+## Safety
+
+- [ ] No data is inferred or guessed.
+- [ ] Any ambiguity causes the synchronization to stop.
+- [ ] Duplicate IDs stop the entire synchronization.
+- [ ] Missing IDs stop the affected update.
+- [ ] Resident records cannot be corrupted under any circumstance.
+
+## Traceability
+
+- [ ] Synchronization is logged.
+- [ ] Errors are logged.
+- [ ] Updated record counts are verified.
+- [ ] The implementation complies with ADR-204.
+
+---
+
+> **When in doubt, stop. Never guess. Never corrupt resident data.**
+
+If any checklist item cannot be satisfied, the implementation shall not proceed.
+
+---
+
+# Purpose
 
 RISEN CARE handles care records that directly affect the safety and quality of care.
 
@@ -69,7 +80,7 @@ No function may compromise the integrity of resident records.
 
 The Daily Record spreadsheet is the only source of operational data.
 
-```
+```text
 Daily Record (Spreadsheet)
             │
             ▼
@@ -92,7 +103,7 @@ Operational users should update the spreadsheet, not the database directly.
 
 The only synchronization key is:
 
-```
+```text
 events.source_record_id
 ```
 
@@ -105,7 +116,7 @@ No synchronization process may use:
 
 Every update must be performed by matching:
 
-```
+```text
 DailyRecord.A
         ==
 events.source_record_id
@@ -218,7 +229,7 @@ Logs should make it possible to answer:
 
 The following safety features are planned.
 
-- Unique Constraint on source_record_id
+- Unique Constraint on `source_record_id`
 - Transaction-based synchronization
 - Rollback capability
 - Version history
@@ -231,8 +242,7 @@ The following safety features are planned.
 
 Automation shall support human judgment, not replace it.
 
-Before modifying resident records, the system should present sufficient
-information for human verification whenever practical.
+Before modifying resident records, the system should present sufficient information for human verification whenever practical.
 
 Typical verification items include:
 
@@ -253,8 +263,7 @@ The system shall never hide uncertainty from the operator.
 The following principle governs every synchronization process,
 database update, and future system enhancement in RISEN CARE.
 
-> **If correctness cannot be guaranteed,
-> the system shall stop rather than risk corrupting resident data.**
+> **If correctness cannot be guaranteed, the system shall stop rather than risk corrupting resident data.**
 
 This principle overrides all implementation decisions,
 performance optimizations, and automation features.
