@@ -180,6 +180,27 @@ The following safety features are planned.
 
 ---
 
+## 10. Human-Centered Verification
+
+Automation shall support human judgment, not replace it.
+
+Before modifying resident records, the system should present sufficient
+information for human verification whenever practical.
+
+Typical verification items include:
+
+- source_record_id
+- resident name
+- event date and time
+- record summary
+- staff name
+
+Users should be able to confirm that the intended record is being updated.
+
+The system shall never hide uncertainty from the operator.
+
+---
+
 # Core Principle
 
 RISEN CARE prioritizes the integrity and traceability of care records over processing speed.
