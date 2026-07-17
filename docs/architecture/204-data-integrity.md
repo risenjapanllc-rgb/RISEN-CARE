@@ -201,10 +201,14 @@ The system shall never hide uncertainty from the operator.
 
 ---
 
-# Core Principle
+---
 
-RISEN CARE prioritizes the integrity and traceability of care records over processing speed.
+# Fundamental Principle
 
-If correctness cannot be guaranteed,
+> **If correctness cannot be guaranteed,
+> the system shall stop rather than risk corrupting resident data.**
 
-**the system shall stop rather than risk corrupting resident data.**
+This principle overrides all implementation decisions,
+performance optimizations, and automation features.
+
+Protecting the integrity of resident records is always the highest priority of RISEN CARE.
