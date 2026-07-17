@@ -4,6 +4,38 @@
 
 **Date:** 2026-07-17
 
+204-data-integrity.md
+
+1. Purpose
+
+2. Design Principles
+
+3. Validation Before Update
+
+4. Fail Safe
+
+5. Audit Trail
+
+6. Logging
+
+7. Future Enhancements
+
+8. Fundamental Principle
+
+# Development Checklist
+
+Every new synchronization process or database update should satisfy the following requirements before implementation.
+
+- [ ] source_record_id is the only synchronization key.
+- [ ] Synchronization never depends on spreadsheet row order.
+- [ ] Validation is performed before updating records.
+- [ ] Ambiguous data causes the synchronization to stop.
+- [ ] No data is inferred or guessed.
+- [ ] Synchronization is fully traceable through logs.
+- [ ] The implementation complies with ADR-204.
+
+---
+
 **Decision**
 
 RISEN CARE adopts a "Data Integrity First" architecture.
@@ -11,6 +43,8 @@ RISEN CARE adopts a "Data Integrity First" architecture.
 Every synchronization process, database update, AI-assisted workflow,
 and future system enhancement shall comply with the principles defined
 in this document.
+
+---
 
 ## Purpose
 
