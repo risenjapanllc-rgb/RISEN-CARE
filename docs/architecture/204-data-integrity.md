@@ -33,6 +33,7 @@ Every new synchronization process or database update should satisfy the followin
 - [ ] No data is inferred or guessed.
 - [ ] Synchronization is fully traceable through logs.
 - [ ] The implementation complies with ADR-204.
+- [ ] Resident records cannot be corrupted under any circumstance.
 
 ---
 
