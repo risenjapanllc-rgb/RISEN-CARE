@@ -1,6 +1,3 @@
-# Apps Script
-.clasp.json
-
 # Environment
 .env
 .env.local
@@ -11,8 +8,11 @@
 # macOS
 .DS_Store
 
-# VSCode
+# VS Code
 .vscode/
 
-# Node
+# Node.js
 node_modules/
+
+# Google Apps Script (将来claspを使う場合)
+.clasp.json
