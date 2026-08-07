@@ -594,3 +594,95 @@ AIKO does not generate answers from LLMs alone.
 Every answer must be supported by structured evidence derived from the RISEN standard data model.
 
 The goal of AIKO is not simply to retrieve records, but to help care professionals understand trends, patterns, and preventive opportunities while keeping every conclusion explainable.
+
+# AIKO Design Specification
+
+## 概要
+
+AIKOは介護施設向けのAI回答システムである。
+
+単なる検索システムではなく、RISEN標準データモデルを利用し、
+
+- 検索
+- 要約
+- 集計
+- 比較
+- 傾向分析
+- パターン分析
+- 回答生成
+- 事前対応支援
+
+を行う。
+
+AIKOはRISEN CARE Connectが生成した標準データのみを利用する。
+
+---
+
+## 設計思想
+
+AIKOはLLM中心ではなく、
+
+**Evidence First（根拠優先）**
+
+を基本思想とする。
+
+回答は必ずRISEN標準データを根拠として生成する。
+
+---
+
+## ドキュメント構成
+
+| ドキュメント | 内容 |
+|--------------|------|
+| architecture.md | システム全体構成 |
+| answer-policy.md | AI回答原則 |
+| analysis-design.md | 分析エンジン設計 |
+| analysis-patterns.md | 分析パターン |
+| analysis-usecases.md | 現場ユースケース |
+| query-intent.md | 質問解析 |
+| data-requirements.md | 必要データ |
+| recording-guideline.md | 記録ガイドライン |
+| evidence-model.md | 根拠モデル |
+| roadmap.md | 開発ロードマップ |
+
+---
+
+## AIKOの処理フロー
+
+質問
+
+↓
+
+Query Intent
+
+↓
+
+Analysis Engine
+
+↓
+
+Evidence
+
+↓
+
+Answer Generation
+
+↓
+
+回答
+
+---
+
+## 開発方針
+
+AIKOは
+
+「AIファースト」
+
+ではなく
+
+「データファースト」
+
+で設計する。
+
+分析可能なデータを基盤とし、その上でAIが回答生成を行う。
