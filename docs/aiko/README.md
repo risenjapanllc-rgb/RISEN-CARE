@@ -1,5 +1,13 @@
 # AIKO
 
+## Core Principles
+
+- Evidence First
+- Analytics before AI
+- Structure before Reasoning
+- AIKO derives understanding from facts and context.
+- It never presents derived observations as facts.
+
 ## Evidence-Based Analytics AI
 
 AIKOは介護・福祉向けのEvidence-Based Analytics AIである。
@@ -183,3 +191,4 @@ AIKO
 Better Care
 
 AIKOはRISEN CAREのObservation Intelligenceを利用するAnalytics AIである。
+
