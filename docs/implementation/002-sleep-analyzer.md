@@ -765,3 +765,57 @@ Derived Observationは分析に利用できる。
 > **AIKO derives understanding from facts and context.**
 
 > **It never presents derived observations as facts.**
+
+
+# 25. UC-001 Data Mapping
+
+Sleep Analyzerが利用するRISEN標準データ項目を、実際のSupabaseテーブル・カラムへ対応付ける。
+
+| 論理項目 | 用途 | Supabase table | column | 必須度 | 備考 |
+|---|---|---|---|---|---|
+| resident_id | 利用者識別 | TBD | TBD | 必須 | 利用者単位で分析 |
+| observation_id | 根拠参照 | TBD | TBD | 必須 | Evidence追跡用 |
+| event_type | 睡眠イベント判定 | TBD | TBD | 必須 | 入眠・起床・大声等 |
+| event_category | 睡眠カテゴリ判定 | TBD | TBD | 推奨 | 睡眠状況など |
+| observed_at | 実際の観察時刻 | TBD | TBD | 必須 | 記録時刻とは区別 |
+| recorded_at | 入力時刻 | TBD | TBD | 推奨 | observed_at不明時の参考 |
+| event_start_at | イベント開始 | TBD | TBD | 推奨 | 睡眠開始等 |
+| event_end_at | イベント終了 | TBD | TBD | 推奨 | 睡眠終了等 |
+| narrative_text | 自由記述 | TBD | TBD | 推奨 | 文脈導出に利用 |
+| staff_id | 記録者 | TBD | TBD | 任意 | Evidence表示用 |
+| source_type | 元データ種別 | TBD | TBD | 任意 | Spreadsheet/API等 |
+
+## 25.1 Event Mapping
+
+| 元データ上のイベント | AIKO内部Fact | 状態 |
+|---|---|---|
+| 就寝 | sleep_start_candidate | FACT |
+| 入眠 | sleep_start | FACT |
+| 起床 | wake_up | FACT |
+| 覚醒 | explicit_awakening | FACT |
+| 夜間覚醒 | explicit_awakening | FACT |
+| 離床 | leave_bed | FACT |
+| トイレ | toilet | FACT |
+| 大声 | loud_voice | FACT |
+| 職員呼び出し | calling_staff | FACT |
+| 会話 | conversation | FACT |
+| 再入眠 | sleep_resume | FACT |
+
+## 25.2 Derived Awakening Mapping
+
+以下の条件を満たした場合、途中覚醒候補を生成する。
+
+```text
+Sleep Episode開始後
+AND
+Sleep Episode終了前
+AND
+以下のいずれか
+
+- leave_bed
+- toilet
+- calling_staff
+- conversation
+- loud_voice
+- nurse_call
+
