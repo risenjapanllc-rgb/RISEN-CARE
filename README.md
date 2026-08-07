@@ -566,3 +566,31 @@ This project is currently under development.
 **Care.**
 
 Powered by **RISEN**
+
+# AIKO Analytics
+
+RISEN CARE provides trusted observation data.
+
+AIKO transforms that data into explainable answers.
+
+AIKO follows an Evidence First architecture.
+
+Question
+
+↓
+
+Analytics
+
+↓
+
+Evidence
+
+↓
+
+AI Answer
+
+AIKO does not generate answers from LLMs alone.
+
+Every answer must be supported by structured evidence derived from the RISEN standard data model.
+
+The goal of AIKO is not simply to retrieve records, but to help care professionals understand trends, patterns, and preventive opportunities while keeping every conclusion explainable.
